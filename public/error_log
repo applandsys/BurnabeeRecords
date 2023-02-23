@@ -1,0 +1,96 @@
+[18-Feb-2023 06:01:22 Europe/London] PHP Warning:  require(/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:01:22 Europe/London] PHP Fatal error:  Uncaught Error: Failed opening required '/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/burnabee/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/burnabee/public_html/vendor/composer/autoload_real.php(45): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::{closure}()
+#1 /home/burnabee/public_html/vendor/autoload.php(25): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::getLoader()
+#2 /home/burnabee/public_html/public/index.php(34): require('/home/burnabee/...')
+#3 {main}
+  thrown in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:01:25 Europe/London] PHP Warning:  require(/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:01:25 Europe/London] PHP Fatal error:  Uncaught Error: Failed opening required '/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/burnabee/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/burnabee/public_html/vendor/composer/autoload_real.php(45): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::{closure}()
+#1 /home/burnabee/public_html/vendor/autoload.php(25): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::getLoader()
+#2 /home/burnabee/public_html/public/index.php(34): require('/home/burnabee/...')
+#3 {main}
+  thrown in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:01:56 Europe/London] PHP Warning:  require(/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:01:56 Europe/London] PHP Fatal error:  Uncaught Error: Failed opening required '/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/burnabee/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/burnabee/public_html/vendor/composer/autoload_real.php(45): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::{closure}()
+#1 /home/burnabee/public_html/vendor/autoload.php(25): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::getLoader()
+#2 /home/burnabee/public_html/public/index.php(34): require('/home/burnabee/...')
+#3 {main}
+  thrown in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:02:26 Europe/London] PHP Warning:  require(/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:02:26 Europe/London] PHP Fatal error:  Uncaught Error: Failed opening required '/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/burnabee/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/burnabee/public_html/vendor/composer/autoload_real.php(45): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::{closure}()
+#1 /home/burnabee/public_html/vendor/autoload.php(25): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::getLoader()
+#2 /home/burnabee/public_html/public/index.php(34): require('/home/burnabee/...')
+#3 {main}
+  thrown in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:02:29 Europe/London] PHP Warning:  require(/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:02:29 Europe/London] PHP Fatal error:  Uncaught Error: Failed opening required '/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/burnabee/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/burnabee/public_html/vendor/composer/autoload_real.php(45): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::{closure}()
+#1 /home/burnabee/public_html/vendor/autoload.php(25): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::getLoader()
+#2 /home/burnabee/public_html/public/index.php(34): require('/home/burnabee/...')
+#3 {main}
+  thrown in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:02:31 Europe/London] PHP Warning:  require(/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:02:31 Europe/London] PHP Fatal error:  Uncaught Error: Failed opening required '/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/burnabee/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/burnabee/public_html/vendor/composer/autoload_real.php(45): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::{closure}()
+#1 /home/burnabee/public_html/vendor/autoload.php(25): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::getLoader()
+#2 /home/burnabee/public_html/public/index.php(34): require('/home/burnabee/...')
+#3 {main}
+  thrown in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:02:33 Europe/London] PHP Warning:  require(/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:02:33 Europe/London] PHP Fatal error:  Uncaught Error: Failed opening required '/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/burnabee/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/burnabee/public_html/vendor/composer/autoload_real.php(45): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::{closure}()
+#1 /home/burnabee/public_html/vendor/autoload.php(25): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::getLoader()
+#2 /home/burnabee/public_html/public/index.php(34): require('/home/burnabee/...')
+#3 {main}
+  thrown in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:02:55 Europe/London] PHP Warning:  require(/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:02:55 Europe/London] PHP Fatal error:  Uncaught Error: Failed opening required '/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/burnabee/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/burnabee/public_html/vendor/composer/autoload_real.php(45): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::{closure}()
+#1 /home/burnabee/public_html/vendor/autoload.php(25): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::getLoader()
+#2 /home/burnabee/public_html/public/index.php(34): require('/home/burnabee/...')
+#3 {main}
+  thrown in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:03:12 Europe/London] PHP Warning:  require(/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:03:12 Europe/London] PHP Fatal error:  Uncaught Error: Failed opening required '/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/burnabee/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/burnabee/public_html/vendor/composer/autoload_real.php(45): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::{closure}()
+#1 /home/burnabee/public_html/vendor/autoload.php(25): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::getLoader()
+#2 /home/burnabee/public_html/public/index.php(34): require('/home/burnabee/...')
+#3 {main}
+  thrown in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:03:42 Europe/London] PHP Warning:  require(/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:03:42 Europe/London] PHP Fatal error:  Uncaught Error: Failed opening required '/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/burnabee/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/burnabee/public_html/vendor/composer/autoload_real.php(45): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::{closure}()
+#1 /home/burnabee/public_html/vendor/autoload.php(25): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::getLoader()
+#2 /home/burnabee/public_html/public/index.php(34): require('/home/burnabee/...')
+#3 {main}
+  thrown in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:04:21 Europe/London] PHP Warning:  require(/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:04:21 Europe/London] PHP Fatal error:  Uncaught Error: Failed opening required '/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/burnabee/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/burnabee/public_html/vendor/composer/autoload_real.php(45): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::{closure}()
+#1 /home/burnabee/public_html/vendor/autoload.php(25): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::getLoader()
+#2 /home/burnabee/public_html/public/index.php(34): require('/home/burnabee/...')
+#3 {main}
+  thrown in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:04:37 Europe/London] PHP Warning:  require(/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
+[18-Feb-2023 06:04:37 Europe/London] PHP Fatal error:  Uncaught Error: Failed opening required '/home/burnabee/public_html/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/burnabee/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/burnabee/public_html/vendor/composer/autoload_real.php(45): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::{closure}()
+#1 /home/burnabee/public_html/vendor/autoload.php(25): ComposerAutoloaderInit061571d79653cc8981e6b2fed34f7c89::getLoader()
+#2 /home/burnabee/public_html/public/index.php(34): require('/home/burnabee/...')
+#3 {main}
+  thrown in /home/burnabee/public_html/vendor/composer/autoload_real.php on line 41
