@@ -32,7 +32,7 @@
                                         <td>
                                         <div class="media align-items-center">
                                             <div class="iq-movie">
-                                                <a href="javascript:void(0);"><img src="{{ asset('uploads/movie/thumbnail') }}/{{$list->thubmnail_image}}" class="img-border-radius avatar-40 img-fluid" alt=""></a>
+                                                <a href="javascript:void(0);"><img src="{{ asset('uploads/video/thumbnail')}}/{{$list->thubmnail_image}}" class="img-border-radius avatar-40 img-fluid" alt=""></a>
                                             </div>
                                             <div class="media-body text-white text-left ml-3">
                                                 <p class="mb-0">{{$list->title}}</p>
@@ -40,17 +40,17 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td>{{$list->category}}</td>
-                                        <td>{{$list->release_year}}</td>
-                                        <td>{{$list->language}}</td>
+                                        <td>{{$list->category->category_name}}</td>
+                                        <td>{{$list->videodatail->release_year}}</td>
+                                        <td>{{$list->videodatail->language}}</td>
                                         <td>
-                                        <p>{{$list->description}}
+                                        <p> {{ \Illuminate\Support\Str::limit($list->description, 150, $end='...') }}
                                         </p>
                                         </td>
                                         <td>
                                         <div class="flex align-items-center list-user-action">
                                             <a class="iq-bg-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="#"><i class="lar la-eye"></i></a>
-                                            <a class="iq-bg-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>
+                                            <a class="iq-bg-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="{{route('admin.movieEdit',$list->id)}}"><i class="ri-pencil-line"></i></a>
                                             <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
                                         </div>
                                         </td>

@@ -28,7 +28,7 @@
                                        <i class="ri-search-line"></i>
                                        </a>
                                        <div class="search-box iq-search-bar">
-                                          <form action="#" class="searchbox">
+                                          <form action="" class="searchbox">
                                              <div class="form-group position-relative">
                                                 <input type="text" class="text search-input font-size-12"
                                                    placeholder="type here to search...">
@@ -147,22 +147,16 @@
                                     <a href="{{route('home_page')}}">Home</a>
                                  </li>
                                  <li class="menu-item">
-                                    <a href="movie-category.html">Movies</a>
+                                    <a href="{{route('home.videos')}}">Videos</a>
                                  </li>
                                  <li class="menu-item">
-                                    <a href="show-category.html">Tv Shows</a>
+                                    <a href="{{route('home.celebrity')}}">Celebrity</a>
                                  </li>
                                  <li class="menu-item">
-                                    <a href="video.html">Videos</a>
+                                    <a href="{{route('home.page','about')}}">About</a>
                                  </li>
                                  <li class="menu-item">
-                                    <a href="video.html">Celebrity</a>
-                                 </li>
-                                 <li class="menu-item">
-                                    <a href="{{route('home.about')}}">About</a>
-                                 </li>
-                                 <li class="menu-item">
-                                    <a href="video.html">Blog</a>
+                                    <a href="#">Blog</a>
                                  </li>
                                  <li class="menu-item">
                                     <a href="{{route('home.contact')}}">Contact</a>

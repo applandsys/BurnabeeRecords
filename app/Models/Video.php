@@ -21,6 +21,11 @@ class Video extends Model
         $this->attributes['slug'] = str_slug($value);
     }
 
+    public function category(){
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
+
 
     public function hitcounter(){
         return $this->hasMany(hitcounter::class, 'post_id', 'id');

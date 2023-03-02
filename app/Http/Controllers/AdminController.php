@@ -11,6 +11,7 @@ use App\Models\Pages;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Slider;
+use App\Models\RateReview;
 
 
 
@@ -36,7 +37,7 @@ class AdminController extends Controller
                 $all_tag = $src[2][0];
             }
 
-       
+               
             //title video_type content_type category_id  thubmnail_image description quality language duration direction tags
 
             $input_array = [
@@ -110,6 +111,23 @@ class AdminController extends Controller
         return view('admin.movieList',compact('movie_list'));
      }
 
+     
+    public function movieEdit($id) {
+        $video = Video::find($id);
+        return view('admin.movieEdit',compact('video'));
+    }
+
+    
+
+    public function movieUpdate(Request $request,$id) {
+        $video = Video::find($id);
+        $video->page_title = $request->page_title;
+        $video->page_slug =  $request->page_slug;
+        $video->content = $request->content;
+        $video->save();
+        return redirect()->route('admin.movieList')->with('success','Movie Updated');
+     }
+
      public function pageList() {
         $page_list = Pages::paginate(20);
         return view('admin.pageList',compact('page_list'));
@@ -136,10 +154,38 @@ class AdminController extends Controller
         return view('admin.userList',compact('user_list'));
      }
 
+     public function addCategory(Request $request) {
+        $method = $request->method();
+        $input = $request->input();
+
+        if ($request->isMethod('post')) {
+            $input_array = [
+                'category_name',
+                'parent_id'
+            ];
+            $create_data = $request->only($input_array);
+            $create_category = Category::create($create_data);
+
+            return redirect()->route('admin.addCategory')->with('success', 'Category Created Successfully.');
+
+        }else{
+            $category_list = Category::get();
+            return view('admin.addCategory',compact('category_list'));
+        }
+    }
+
      public function categoryList() {
-        $category_list = Category::paginate(20);
+        $category_list = Category::get();
         return view('admin.categoryList',compact('category_list'));
      }
+
+      
+
+     public function categoryEdit($id) {
+        $category =  Category::paginate(20);
+        return view('admin.categoryEdit',compact('slider','category'));
+     }
+
 
      public function sliderList() {
         $slider_list = Slider::paginate(20);
@@ -159,6 +205,17 @@ class AdminController extends Controller
         $slider->video_id = $request->video_id;
         $slider->save();
         return redirect()->route('admin.sliderList')->with('success','Slider Updated');
+     }
+
+
+     public function ratingList() {
+        $rating_list = RateReview::paginate(20);
+        return view('admin.ratingList',compact('rating_list'));
+     }
+
+     public function reviewList() {
+        $review_list = RateReview::paginate(20);
+        return view('admin.reviewList',compact('review_list'));
      }
 
 

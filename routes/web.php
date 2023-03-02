@@ -22,12 +22,14 @@ use App\Http\Controllers\AdminController;
 Route::namespace('Front')->group(function(){
     Route::get('/',[FrontController::class,'index'])->name('home_page');
     Route::get('/details/{id?}/{slug?}',[FrontController::class,'detail'])->name('home.vide_detail');
-    Route::get('/contact',[FrontController::class,'contact'])->name('home.contact');
-    Route::get('/about',[FrontController::class,'about'])->name('home.about');
+    Route::match(['get','post'],'/contact',[FrontController::class,'contact'])->name('home.contact');
+    Route::get('/page/{slug}',[FrontController::class,'page'])->name('home.page');
     Route::get('/celebrity',[FrontController::class,'celebrity'])->name('home.celebrity');
+    Route::get('/celebrity_detail/{id}/{slug}',[FrontController::class,'celebrity_detail'])->name('home.celebrity_detail');
     Route::get('/privacy-plicy',[FrontController::class,'privacyPlicy'])->name('home.privacy-plicy');
     Route::get('/faq',[FrontController::class,'faq'])->name('home.faq');
     Route::get('/watch-list',[FrontController::class,'watchList'])->name('home.watch-list');
+    Route::get('/videos',[FrontController::class,'videos'])->name('home.videos');
 });
 
 
@@ -35,6 +37,9 @@ Route::group(['prefix' => 'admin','middleware' => 'auth','namespace'=>'Admin'], 
     Route::get('/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
     Route::match(['get','post'],'/add-movie', [AdminController::class, 'addMovie'])->name('admin.addMovie');
     Route::get('/movie-list', [AdminController::class, 'movieList'])->name('admin.movieList');
+    Route::get('/movie-edit/{id}', [AdminController::class, 'movieEdit'])->name('admin.movieEdit');
+    Route::post('/movie-update/{id}', [AdminController::class, 'movieUpdate'])->name('admin.movieUpdate');
+
     Route::get('/slider-list', [AdminController::class, 'sliderList'])->name('admin.sliderList');
     Route::get('/page-list', [AdminController::class, 'pageList'])->name('admin.pageList');
     Route::get('/page-edit/{id}', [AdminController::class, 'pageEdit'])->name('admin.pageEdit');
@@ -42,11 +47,21 @@ Route::group(['prefix' => 'admin','middleware' => 'auth','namespace'=>'Admin'], 
 
     
     Route::get('/user-list', [AdminController::class, 'userList'])->name('admin.userList');
+
+
+    Route::match(['get','post'],'/add-category', [AdminController::class, 'addCategory'])->name('admin.addCategory');
     Route::get('/category-list', [AdminController::class, 'categoryList'])->name('admin.categoryList');
+    Route::get('/category-edit/{id}', [AdminController::class, 'categoryEdit'])->name('admin.categoryEdit');
+
+
     Route::get('/slider-list', [AdminController::class, 'sliderList'])->name('admin.sliderList');
     Route::get('/slider-edit/{id}', [AdminController::class, 'sliderEdit'])->name('admin.sliderEdit');
 
     Route::post('/slider-update/{id}', [AdminController::class, 'sliderUpdate'])->name('admin.sliderUpdate');
+
+
+    Route::get('/rating-list', [AdminController::class, 'ratingList'])->name('admin.ratingList');
+    Route::get('/review-list', [AdminController::class, 'reviewList'])->name('admin.reviewList');
 
     
 });

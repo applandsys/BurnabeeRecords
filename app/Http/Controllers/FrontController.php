@@ -7,6 +7,8 @@ use  App\Models\Slider;
 use  App\Models\Video;
 use  App\Models\UpcomingVideo;
 use  App\Models\HitCounter;
+use  App\Models\Pages;
+use  App\Models\ContactMessage;
 
 
 class FrontController extends Controller
@@ -52,16 +54,40 @@ class FrontController extends Controller
     }
 
 
-    public function contact(){
-        return view('front.contact');
+    public function contact(Request $request){
+
+        $method = $request->method();
+        $input = $request->input();
+
+        if ($request->isMethod('post')) {
+           $create_data =  $request->only( ['your_name','your_subject','phone','your_email','your_message']);
+           ContactMessage::create( $create_data );
+           return redirect()->route('home.contact')->with('success', 'Message Sent Successfully.');
+        }else{
+            return view('front.contact');
+        }    
+        
     }
 
-    public function about(){
-        return view('front.about');
+    public function page($slug){
+        $page =  Pages::where('page_slug',$slug)->get();
+        return view('front.page',compact('page'));
     }
+
 
     public function celebrity(){
         return view('front.celebrity');
+    }
+
+     
+
+    public function celebrity_detail($id,$slug){
+        return view('front.celebrity_detail');
+    }
+
+    public function videos(){
+        $latest_video = Video::paginate(20);
+        return view('front.videos',compact('latest_video'));
     }
 
 

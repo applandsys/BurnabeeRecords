@@ -9,15 +9,15 @@
                            <ul id="menu-footer-link-1" class="menu p-0">
                               <li id="menu-item-7314"
                                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7314">
-                                 <a href="#">Terms Of Use</a>
+                                 <a href="{{route('home.page','terms')}}">Terms Of Use</a>
                               </li>
                               <li id="menu-item-7316"
                                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7316">
-                                 <a href="{{route('home.privacy-plicy')}}">Privacy-Policy</a>
+                                 <a href="{{route('home.page','privacy')}}">Privacy-Policy</a>
                               </li>
                               <li id="menu-item-701"
                                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-701">
-                                 <a href="{{route('home.faq')}}">FAQ</a>
+                                 <a href="{{route('home.page','faq')}}">FAQ</a>
                               </li>
                               <li id="menu-item-7118"
                                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7118">
