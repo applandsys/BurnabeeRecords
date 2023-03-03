@@ -249,7 +249,7 @@ class AdminController extends Controller
             $thumbnail = public_path('uploads/celebirty_profile/thumbnail/' .$img); // Resized
             $imgFile = Image::make($image)->save($location);
 
-            $imgFile->resize(350, 197, function ($constraint) {
+            $imgFile->resize(265, 345, function ($constraint) {
                 $constraint->aspectRatio();
             })->save($thumbnail);
 

@@ -5,10 +5,11 @@
       <div class="container">
          <div class="row">
                <div class="col-lg-8 col-sm-12">
+                @foreach($blog_post as $list )
                   <article>
                      <div class="iq-blog-box">
                         <div class="iq-blog-image">
-                           <img width="1920" height="1080" src="./images/blog/blog1.jpeg" alt="" >				
+                           <img width="1920" height="1080" src="{{ asset('uploads/blog/thumbnail')}}/{{$list->featured_image}}" alt="{{$list->blog_title}}" >				
                         </div>
                         <div class="iq-blog-detail">
                            <div class="iq-blog-meta">
@@ -20,7 +21,7 @@
                                     <i class="fa fa-calendar mr-1" aria-hidden="true"></i>
                                     <span class="screen-reader-text">Posted on</span>
                                     <a href="#" rel="bookmark">
-                                       <time  datetime="2019-02-02T12:46:15+00:00">February 2, 2019</time>
+                                       <time  datetime="{{$list->created_at}}">{{ \Carbon\Carbon::parse($list->created_at)->format('d M Y')}}</time>
                                     </a>					
                                  </li>
                               </ul>
@@ -28,11 +29,11 @@
                            <div class="blog-title">
                               <h3 class="entry-title">
                                  <a href="blog-details.html">
-                                 The Most Anticipated Movies</a>
+                                 {{$list->blog_title}}</a>
                                  </h3>
                            </div>
                            <div class="blog-content">
-                              <p>Praesent iaculis, purus ac vehicula mattis, arcu lorem blandit nisl, non laoreet dui mi eget elit. Donec porttitor ex vel augue maximus luctus. Vivamus finibus nibh eu nunc volutpat suscipit.</p>
+                              <p>     {{$list->blog_content}}.</p>
                            </div>
                            <div class="blog-button">
                               <a class="button-link" href="#">Read More<i class="fa fa-angle-right" aria-hidden="true"></i></a>
@@ -52,6 +53,7 @@
                         </div>
                      </div>
                   </article>
+                  @endforeach
                  
                   <a class=" btn btn-hover iq-button">
                      <span>Load More</span>

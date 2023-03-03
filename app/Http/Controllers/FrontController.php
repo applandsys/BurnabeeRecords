@@ -10,6 +10,7 @@ use  App\Models\HitCounter;
 use  App\Models\Pages;
 use  App\Models\ContactMessage;
 use  App\Models\BlogPost;
+use  App\Models\Celebrity;
 
 
 class FrontController extends Controller
@@ -77,7 +78,8 @@ class FrontController extends Controller
 
 
     public function celebrity(){
-        return view('front.celebrity');
+        $celebrity =  Celebrity::paginate(20);
+        return view('front.celebrity',compact('celebrity'));
     }
 
      
