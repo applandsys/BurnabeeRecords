@@ -888,3 +888,8 @@ Pricing Page
   border: 1px solid #404043 !important;
   border-radius: unset !important;
 }
+
+
+.js-example-basic-multiple{
+  color: #000;
+}

@@ -12,6 +12,10 @@ use App\Models\User;
 use App\Models\Category;
 use App\Models\Slider;
 use App\Models\RateReview;
+use App\Models\Celebrity;
+use App\Models\Setting;
+use App\Models\BlogPost;
+use Auth;
 
 
 
@@ -217,6 +221,126 @@ class AdminController extends Controller
         $review_list = RateReview::paginate(20);
         return view('admin.reviewList',compact('review_list'));
      }
+
+
+    
+     public function addCelebrity(Request $request) {
+        $method = $request->method();
+        $input = $request->input();
+
+        if ($request->isMethod('post')) {
+   
+            $input_array = [
+                'celebrity_name',
+                'nick_name',
+                'description',
+                'profile_photo',
+                'facebook_link',
+                'twitter_link',
+                'video_id',
+            ];
+
+            $create_data = $request->only($input_array);
+
+            $image = $request->file('profile_photo');
+
+            $img = $image->getClientOriginalName().'_'.time().'.'.$image->getClientOriginalExtension();
+            $location = public_path('uploads/celebirty_profile/original_thumbnail/' .$img);
+            $thumbnail = public_path('uploads/celebirty_profile/thumbnail/' .$img); // Resized
+            $imgFile = Image::make($image)->save($location);
+
+            $imgFile->resize(350, 197, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($thumbnail);
+
+            $create_data['profile_photo'] = $img;
+            $create_data['video_id'] = json_encode($input['video_id']) ;
+
+            $create_video = Celebrity::create($create_data);
+
+            return redirect()->route('admin.addCelebrity')->with('success', 'Celebrity Created Successfully');
+
+        }else{
+            $movie_list = Video::get();
+            return view('admin.addCelebrity',compact('movie_list'));
+        }
+    }
+
+    public function celebrityList() {
+        $celebrity_list = Celebrity::paginate(20);
+        return view('admin.celebrityList',compact('celebrity_list'));
+    }
+
+    public function Settings(Request $request) {
+        $method = $request->method();
+        $input = $request->input();
+
+        $Setting = Setting::find(1);
+
+        if ($request->isMethod('post')) {
+
+            $Setting->footer_content = $request->footer_content;
+            $Setting->facebook = $request->facebook;
+            $Setting->instagram = $request->instagram;
+            $Setting->tiktok = $request->tiktok;
+            $Setting->spotify = $request->spotify;
+            $Setting->youtube = $request->youtube;
+            $Setting->save();
+
+            return redirect()->route('admin.Settings')->with('success', 'Setting Updated Successfully.');
+
+        }else{
+            return view('admin.Setting',compact('Setting'));
+        }
+    }
+
+
+
+    public function blogList() {
+        $blog_list = BlogPost::paginate(20);
+       // dd(  $blog_list);
+        return view('admin.blogList',compact('blog_list'));
+    }
+
+       
+    public function addBlog(Request $request) {
+        $method = $request->method();
+        $input = $request->input();
+
+        if ($request->isMethod('post')) {
+   
+            $input_array =  [
+                                'category_id',
+                                'blog_title',
+                                'blog_content',
+                                'tags'
+                            ];;
+
+            $create_data = $request->only($input_array);
+
+            $image = $request->file('featured_image');
+
+            $img = $image->getClientOriginalName().'_'.time().'.'.$image->getClientOriginalExtension();
+            $location = public_path('uploads/blog/original_thumbnail/' .$img);
+            $thumbnail = public_path('uploads/blog/thumbnail/' .$img); // Resized
+            $imgFile = Image::make($image)->save($location);
+
+            $imgFile->resize(350, 197, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($thumbnail);
+
+            $create_data['featured_image'] = $img;
+            $create_data['user_id'] =Auth::id();
+            
+            $create_video = BlogPost::create($create_data);
+
+            return redirect()->route('admin.blogList')->with('success', 'Blog Created Successfully');
+
+        }else{
+            $category = Category::get();
+            return view('admin.addBlog',compact('category'));
+        }
+    }
 
 
 }

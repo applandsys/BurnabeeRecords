@@ -9,6 +9,7 @@ use  App\Models\UpcomingVideo;
 use  App\Models\HitCounter;
 use  App\Models\Pages;
 use  App\Models\ContactMessage;
+use  App\Models\BlogPost;
 
 
 class FrontController extends Controller
@@ -86,9 +87,25 @@ class FrontController extends Controller
     }
 
     public function videos(){
-        $latest_video = Video::paginate(20);
+        $latest_video = Video::paginate(4);
         return view('front.videos',compact('latest_video'));
     }
+
+    
+
+    public function searchVideo(Request $request){
+        $keyword =  $request->keyword;
+       // dd( $keyword);
+        $search_video = Video::where('title','LIKE','%'.$keyword.'%')->paginate(20);
+        return view('front.search_video',compact('search_video'));
+    }
+
+
+    public function blog(){
+        $blog_post = BlogPost::paginate(20);
+        return view('front.blog',compact('blog_post'));
+    }
+
 
 
 }

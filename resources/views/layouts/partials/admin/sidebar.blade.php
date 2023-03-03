@@ -53,8 +53,33 @@
                    <li><a href="{{route('admin.pageList')}}"><i class="las la-list-ul"></i> Page List</a></li>
                 </ul>
              </li>
+
+             <li>
+                <a href="#blog" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="las la-film"></i><span>Blog</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                <ul id="blog" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                   <li><a href="{{route('admin.blogList')}}"><i class="las la-list-ul"></i> Blog List</a></li>
+                   <li><a href="{{route('admin.addBlog')}}"><i class="las la-list-ul"></i> Add  Blog</a></li>
+                </ul>
+             </li>
+
+
+             <li>
+                <a href="#celebrity" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="las la-film"></i><span>Celebrity</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                <ul id="celebrity" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                   <li><a href="{{route('admin.celebrityList')}}"><i class="las la-list-ul"></i> Celebrity List</a></li>
+                   <li><a href="{{route('admin.addCelebrity')}}"><i class="las la-list-ul"></i> Add  Celebrity</a></li>
+                </ul>
+             </li>
+
+
+             <li>
+                <a href="#settings" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="las la-film"></i><span>Settings</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                <ul id="settings" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                   <li><a href="{{route('admin.Settings')}}"><i class="las la-list-ul"></i> General Settings</a></li>
+                </ul>
+             </li>
     
-    
+
           </ul>
        </nav>
     </div>

@@ -19,6 +19,7 @@ class CreateBlogPostsTable extends Migration
             $table->bigInteger('user_id');
             $table->text('blog_title');
             $table->longText('blog_content');
+            $table->longText('featured_image');
             $table->text('tags');
             $table->timestamps();
         });

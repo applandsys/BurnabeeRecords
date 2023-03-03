@@ -30,6 +30,10 @@ Route::namespace('Front')->group(function(){
     Route::get('/faq',[FrontController::class,'faq'])->name('home.faq');
     Route::get('/watch-list',[FrontController::class,'watchList'])->name('home.watch-list');
     Route::get('/videos',[FrontController::class,'videos'])->name('home.videos');
+
+    Route::get('/search-video',[FrontController::class,'searchVideo'])->name('home.searchVideo');
+    Route::get('/blog',[FrontController::class,'blog'])->name('home.blog');
+   
 });
 
 
@@ -53,16 +57,26 @@ Route::group(['prefix' => 'admin','middleware' => 'auth','namespace'=>'Admin'], 
     Route::get('/category-list', [AdminController::class, 'categoryList'])->name('admin.categoryList');
     Route::get('/category-edit/{id}', [AdminController::class, 'categoryEdit'])->name('admin.categoryEdit');
 
-
     Route::get('/slider-list', [AdminController::class, 'sliderList'])->name('admin.sliderList');
     Route::get('/slider-edit/{id}', [AdminController::class, 'sliderEdit'])->name('admin.sliderEdit');
 
     Route::post('/slider-update/{id}', [AdminController::class, 'sliderUpdate'])->name('admin.sliderUpdate');
 
-
     Route::get('/rating-list', [AdminController::class, 'ratingList'])->name('admin.ratingList');
     Route::get('/review-list', [AdminController::class, 'reviewList'])->name('admin.reviewList');
 
+    Route::get('/celebrity-list', [AdminController::class, 'celebrityList'])->name('admin.celebrityList');
+    Route::match(['get','post'],'/add-celebrity', [AdminController::class, 'addCelebrity'])->name('admin.addCelebrity');
+
+    
+    Route::get('/blog-list', [AdminController::class, 'blogList'])->name('admin.blogList');
+
+    Route::match(['get','post'],'/add-blog', [AdminController::class, 'addBlog'])->name('admin.addBlog');
+
+    Route::match(['get','post'],'/Settings', [AdminController::class, 'Settings'])->name('admin.Settings');
+
+
+    
     
 });
 
