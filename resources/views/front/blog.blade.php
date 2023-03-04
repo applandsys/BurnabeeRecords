@@ -28,7 +28,7 @@
                            </div>
                            <div class="blog-title">
                               <h3 class="entry-title">
-                                 <a href="blog-details.html">
+                                 <a href="{{route('home.blogdetail',['id'=>$list->id,'slug'=>Illuminate\Support\Str::slug('blog slug')] )}}">
                                  {{$list->blog_title}}</a>
                                  </h3>
                            </div>

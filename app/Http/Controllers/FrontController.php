@@ -108,6 +108,12 @@ class FrontController extends Controller
         return view('front.blog',compact('blog_post'));
     }
 
+    public function blogdetail($id,$slug){
+        $blog_detail = BlogPost::find($id);
+        return view('front.blogdetail',compact('blog_detail'));
+    }
+
+
 
 
 }
