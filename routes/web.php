@@ -42,8 +42,8 @@ Route::group(['prefix' => 'admin','middleware' => 'auth','namespace'=>'Admin'], 
     Route::get('/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
     Route::match(['get','post'],'/add-movie', [AdminController::class, 'addMovie'])->name('admin.addMovie');
     Route::get('/movie-list', [AdminController::class, 'movieList'])->name('admin.movieList');
-    Route::get('/movie-edit/{id}', [AdminController::class, 'movieEdit'])->name('admin.movieEdit');
-    Route::post('/movie-update/{id}', [AdminController::class, 'movieUpdate'])->name('admin.movieUpdate');
+    Route::match(['get','post'],'/movie-edit/{id}', [AdminController::class, 'movieEdit'])->name('admin.movieEdit');
+    Route::get('/movie-delete/{id}', [AdminController::class, 'deleteVideo'])->name('admin.deleteVideo');
 
     Route::get('/slider-list', [AdminController::class, 'sliderList'])->name('admin.sliderList');
     Route::get('/page-list', [AdminController::class, 'pageList'])->name('admin.pageList');
@@ -56,10 +56,12 @@ Route::group(['prefix' => 'admin','middleware' => 'auth','namespace'=>'Admin'], 
 
     Route::match(['get','post'],'/add-category', [AdminController::class, 'addCategory'])->name('admin.addCategory');
     Route::get('/category-list', [AdminController::class, 'categoryList'])->name('admin.categoryList');
-    Route::get('/category-edit/{id}', [AdminController::class, 'categoryEdit'])->name('admin.categoryEdit');
+    Route::match(['get','post'],'/category-edit/{id}', [AdminController::class, 'categoryEdit'])->name('admin.categoryEdit');
 
     Route::get('/slider-list', [AdminController::class, 'sliderList'])->name('admin.sliderList');
+    Route::get('/slider-add', [AdminController::class, 'sliderAdd'])->name('admin.sliderAdd');
     Route::get('/slider-edit/{id}', [AdminController::class, 'sliderEdit'])->name('admin.sliderEdit');
+    Route::get('/slider-delete/{id}', [AdminController::class, 'sliderDelete'])->name('admin.sliderDelete');
 
     Route::post('/slider-update/{id}', [AdminController::class, 'sliderUpdate'])->name('admin.sliderUpdate');
 

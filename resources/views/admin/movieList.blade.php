@@ -49,9 +49,9 @@
                                         </td>
                                         <td>
                                         <div class="flex align-items-center list-user-action">
-                                            <a class="iq-bg-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="#"><i class="lar la-eye"></i></a>
+                                            <a class="iq-bg-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="{{ url('/details') }}/{{$list->id}}/{{urlencode(Illuminate\Support\Str::slug($list->title))}}" target="_blank"><i class="lar la-eye"></i></a>
                                             <a class="iq-bg-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="{{route('admin.movieEdit',$list->id)}}"><i class="ri-pencil-line"></i></a>
-                                            <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
+                                            <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="{{route('admin.deleteVideo',$list->id)}}"  onclick="return confirm('Are you sure you want to delete?');"><i class="ri-delete-bin-line"></i></a>
                                         </div>
                                         </td>
                                     </tr>

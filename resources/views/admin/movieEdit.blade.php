@@ -19,7 +19,7 @@
                     </div>
                     @endif
 
-                        <form action="{{ route('admin.movieUpdate',$video->id) }}" method="POST"  enctype="multipart/form-data">
+                        <form action="{{ route('admin.movieEdit',$video->id) }}" method="POST"  enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -68,6 +68,9 @@
                                            <label> Thumbnail:</label>
                                         </div>
                                         <div class="col-md-4 form-group">
+                                            <div>
+                                             <img src="{{ asset('uploads/video/thumbnail')}}/{{$video->thubmnail_image}}" class="img-border-radius  img-fluid" alt="">
+                                            </div>
                                             <input name="thubmnail_image" data-name="#gallery2" id="form_gallery-upload" class="form_gallery-upload"
                                                 type="file" accept=".png, .jpg, .jpeg">
                                         </div>

@@ -15,10 +15,9 @@
       </div>
       <div class="container-md container-fluid">
          <div class="row about-us-detail">
-
             @foreach($celebrity as $list)
             <div class="col-md-3 mb-4">
-            <a href="{{route('home.celebrity_detail',['id' => 5, 'slug' => 'advanced-web-hindi'])}}">
+            <a href="{{route('home.celebrity_detail',['id' => $list->id, 'slug' => Illuminate\Support\Str::slug($list->celebrity_name)])}}">
                <div class="image-box">
                   <img width="265" height="345" src="{{ asset('uploads/celebirty_profile/thumbnail')}}/{{$list->profile_photo}}" class="img-fluid attachment-large size-large" alt="" loading="lazy">
                </div>
@@ -36,8 +35,5 @@
     
          </div>
       </div>
-
-
- 
    </main>
 @endsection

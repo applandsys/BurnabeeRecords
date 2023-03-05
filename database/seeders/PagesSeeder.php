@@ -13,6 +13,6 @@ class PagesSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
     }
 }

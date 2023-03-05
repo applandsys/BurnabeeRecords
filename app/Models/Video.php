@@ -15,11 +15,11 @@ class Video extends Model
     }
 
 
-    public function setTitleAttribute($value)
-    {
-        $this->attributes['title'] = $value;
-        $this->attributes['slug'] = str_slug($value);
-    }
+    // public function setTitleAttribute($value)
+    // {
+    //     $this->attributes['title'] = $value;
+    //     $this->attributes['slug'] = str_slug($value);
+    // }
 
     public function category(){
         return $this->belongsTo(Category::class, 'category_id');
@@ -28,7 +28,7 @@ class Video extends Model
 
 
     public function hitcounter(){
-        return $this->hasMany(hitcounter::class, 'post_id', 'id');
+        return $this->hasMany(HitCounter::class, 'post_id', 'id');
     }
 
 }

@@ -9,40 +9,27 @@
                   <article>
                      <div class="iq-blog-box">
                         <div class="iq-blog-image">
-                           <img width="1920" height="1080" src="./images/blog/blog1.jpeg" loading="lazy" alt="" >				
+                           <img width="1920" height="1080" src="{{ asset('uploads/blog/original_thumbnail')}}/{{$blog_detail->featured_image}}" loading="lazy" alt="" >				
                         </div>
                         <div class="iq-blog-detail">
                               <div class="iq-blog-meta">
                                  <ul class="list-inline">
                                  <li class="list-inline-item">
-                                    <a href="#" class="iq-user"><i class="fa fa-user-o mr-1" aria-hidden="true"></i>admin</a>
+                                    <a href="#" class="iq-user"><i class="fa fa-user-o mr-1" aria-hidden="true"></i>{{$blog_detail->user->first_name}}</a>
                                  </li>
                                  <li class="list-inline-item">
                                     <i class="fa fa-calendar mr-1" aria-hidden="true"></i>
                                     <span class="screen-reader-text">Posted on</span>
                                     <a href="#" rel="bookmark">
-                                          <time  datetime="2019-02-02T12:46:15+00:00">February 2, 2019</time>
+                                          <time  datetime="2019-02-02T12:46:15+00:00">{{ \Carbon\Carbon::parse($blog_detail->created_at)->format('d M Y')}}</time>
                                     </a>					
                                  </li>
                                  </ul>
                               </div>
                               <div class="blog-content">
-                                 <p><strong>Praesent iaculis, purus ac vehicula mattis, arcu lorem blandit nisl, non laoreet dui mi eget elit. Donec porttitor ex vel augue maximus luctus. Vivamus finibus nibh eu nunc volutpat suscipit.</strong></p>
-                                 <p>Nam vulputate libero quis nisi euismod rhoncus. Sed eu euismod felis. Aenean ullamcorper dapibus odio ac tempor. Aliquam iaculis, quam vitae imperdiet consectetur, mi ante semper metus, ac efficitur nisi justo ut eros. Maecenas suscipit turpis fermentum elementum scelerisque.</p>
-                                 <p>Sed leo elit, volutpat quis aliquet eu, elementum eget arcu. Aenean ligula tellus, malesuada eu ultrices vel, vulputate sit amet metus. Donec tincidunt sapien ut enim feugiat, sed egestas dolor ornare.</p>
+                                 {!! $blog_detail->blog_content !!}
                               </div>
-                           <blockquote class="wp-block-quote">
-                              <p>\”Simon Doe has his tongue planted in his cheek as he describes the<br>fictional skills of his advancing agent.\”</p>
-                              <cite><a href="#">Steve Kowalsky</a></cite>
-                           </blockquote>
-                           <p>Potenti fusce himenaeos hac aenean quis donec vivamus aliquet, wprdpress integer inceptos curae sollicitudin in class sociosqu netus, euismod tempus fermentum odio gravida eleifend viverra pulvinar inceptos ligula consectetur. Potenti ante porttitor tristique curae scelerisque tristique, dictum eu donec conubia sit rutrum duis viverra in commodo.</p>
-                           <p>Nisi habitasse viverra praesent a maecenas odio erat tristique praesent elementum rutrum maecenas blandit nec curabitur donec, turpis varius etiam felis ultrices sit, per inceptos dapibus fames donec praesent quisque commodo primis proin leo nisl lacinia dictumst justo sagittis luctus vestibulum sed quisque.</p>
-                           <div>
-                              <div >
-                                 <iframe title="Lauren Cohan opens up about her ‘Walking Dead’ salary dispute" width="525" height="295" src="https://www.youtube.com/embed/bPh0kfMRIFA?feature=oembed" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-                              </div>
-                           </div>
-                           <p>Potenti fusce himenaeos hac aenean quis donec vivamus aliquet, wprdpress integer inceptos curae sollicitudin in class sociosqu netus, euismod tempus fermentum odio gravida eleifend viverra pulvinar inceptos ligula consectetur. Potenti ante porttitor tristique curae scelerisque tristique, dictum eu donec conubia sit rutrum duis viverra in commodo.</p>
+           
                         </div>
                      </div>
                         <div class="comments-area validate-form">
@@ -103,99 +90,52 @@
                         <h5 class="widget-title">Recent Post</h5>              
                         <div class="list-inline iq-widget-menu">
                            <ul class="iq-post">
+                              @foreach($recent_blog as $recent)
                               <li>
                                  <div class="post-img">
                                     <div class="post-img-holder">
-                                       <a href="#" style="background-image: url('./images/blog/blog1.jpeg');"></a>
+                                       <a href="#" style="background-image: url('{{ asset('uploads/blog/thumbnail')}}/{{$recent->featured_image}}');"></a>
                                     </div>
                                     <div class="post-blog">
                                        <div class="blog-box">
                                           <ul class="list-inline">
                                              <li class="list-inline-item  mr-3">
-                                                <a class="date-widget" href="#"><i class="fa fa-calendar mr-2" aria-hidden="true"></i>February 2, 2019</a>
+                                                <a class="date-widget" href="#"><i class="fa fa-calendar mr-2" aria-hidden="true"></i>{{ \Carbon\Carbon::parse($blog_detail->created_at)->format('d M Y')}}</a>
                                              </li>
                                           </ul>
-                                          <a class="new-link" href="#"><h6>The Most Anticipated Movies</h6></a>
+                                          <a class="new-link" href="#"><h6>{{$blog_detail->blog_title}}</h6></a>
                                        </div>
                                     </div>
                                  </div>
                               </li>
-                              <li>
-                                 <div class="post-img">
-                                    <div class="post-img-holder">
-                                       <a href="#" style="background-image: url('./images/blog/blog2.jpeg');"></a>
-                                    </div>
-                                    <div class="post-blog">
-                                       <div class="blog-box">
-                                          <ul class="list-inline">
-                                             <li class="list-inline-item  mr-3"><a class="date-widget" href="#"><i class="fa fa-calendar mr-2" aria-hidden="true"></i>February 2, 2019</a></li>
-                                          </ul>
-                                          <a class="new-link" href="#"><h6>Amy Adams Always Dreamed</h6></a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </li>
-                              <li>
-                                 <div class="post-img">
-                                    <div class="post-img-holder">
-                                       <a href="#" style="background-image: url(./images/blog/blog3.jpeg);"></a>
-                                    </div>
-                                    <div class="post-blog">
-                                       <div class="blog-box">
-                                          <ul class="list-inline">
-                                             <li class="list-inline-item  mr-3"><a class="date-widget" href="#"><i class="fa fa-calendar mr-2" aria-hidden="true"></i>February 2, 2019</a></li>
-                                          </ul>
-                                          <a class="new-link" href="#"><h6>WandaVision Will Reveal Scarlet Witch’s Untapped Powers</h6></a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </li>
+                              @endforeach
+                           
                            </ul>
                         </div>
                      </div>
-                     <div id="archives-2" class="widget widget_archive">
+                     <!-- <div id="archives-2" class="widget widget_archive">
                         <h5 class="widget-title">Archives</h5>
                         <ul>
                            <li><a href="#">February 2019</a></li>
                            <li><a href="#">January 2019</a></li>
                         </ul>
-                     </div>
+                     </div> -->
                      <div id="categories-2" class="widget widget_categories">
                         <h5 class="widget-title">Categories</h5>
                         <ul>
-                           <li><a href="#">Dramas</a></li>
-                           <li><a href="#">Historical</a></li>
-                           <li><a href="#">Movie</a></li>
-                           <li><a href="#">Movie Trailers</a></li>
-                           <li><a href="#">Trailers</a></li>
-                           <li><a href="#">TV Comedies</a></li>
-                           <li><a href="#">TV Rumors</a></li>
-                           <li><a href="#">TV Series</a></li>
+                           @foreach($category as $cat)
+                           <li><a href="#">{{$cat->category_name}}</a></li>
+                           @endforeach
                         </ul>
                      </div>
                      <div id="tag_cloud-2" class="widget widget_tag_cloud"><h5 class="widget-title">Tags</h5><div class="tagcloud">
                         <ul class="wp-tag-cloud" >
                            <li><a href="#" class="tag-cloud-link " >Action</a></li>
-                           <li><a href="#" class="tag-cloud-link ">Comedies</a></li>
-                           <li><a href="#" class="tag-cloud-link ">comedy</a></li>
-                           <li><a href="#" class="tag-cloud-link ">Drama</a></li>
-                           <li><a href="#" class="tag-cloud-link ">Dramas</a></li>
-                           <li><a href="#" class="tag-cloud-link ">Historical</a></li>
-                           <li><a href="#" class="tag-cloud-link ">horr</a></li>
-                           <li><a href="#" class="tag-cloud-link ">Horror</a></li>
-                           <li><a href="#" class="tag-cloud-link ">Movie</a></li>
-                           <li><a href="#" class="tag-cloud-link">Movie Trailers</a></li>
-                           <li><a href="#" class="tag-cloud-link">Mystery</a></li>
-                           <li><a href="#" class="tag-cloud-link">Rumors</a></li>
-                           <li><a href="#" class="tag-cloud-link">thrill</a></li>
-                           <li><a href="#" class="tag-cloud-link">Thriller</a></li>
-                           <li><a href="#" class="tag-cloud-link">Trailers</a></li>
-                           <li><a href="#" class="tag-cloud-link ">Tv Rumors</a></li>
-                           <li><a href="#" class="tag-cloud-link">TV Series</a></li>
+
                         </ul>
                      </div>
                   </div>
-                  <div id="recent-posts-2" class="widget widget_recent_entries">
+                  <!-- <div id="recent-posts-2" class="widget widget_recent_entries">
                      <h5 class="widget-title">Recent Posts</h5>
                      <ul>
                         <li>
@@ -214,8 +154,8 @@
                            <a href="#">My streaming Black Pearl</a>
                         </li>
                      </ul>
-                  </div>
-                  <div id="meta-1" class="widget widget_meta">
+                  </div> -->
+                  <!-- <div id="meta-1" class="widget widget_meta">
                      <h5 class="widget-title">Meta</h5>
                      <ul>
                         <li><a href="#">Log in</a></li>
@@ -223,7 +163,7 @@
                         <li><a href="#">Comments feed</a></li>
                         <li><a href="#">WordPress.org</a></li>
                      </ul>
-                  </div>
+                  </div> -->
                </div>
             </div>
          </div>

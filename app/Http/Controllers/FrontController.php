@@ -11,6 +11,7 @@ use  App\Models\Pages;
 use  App\Models\ContactMessage;
 use  App\Models\BlogPost;
 use  App\Models\Celebrity;
+use  App\Models\Category;
 
 
 class FrontController extends Controller
@@ -20,7 +21,10 @@ class FrontController extends Controller
         $slider_top = Slider::where('slider_postion','slider_top')->get();
         $latest_video = Video::take(10)->get();
         $upcoming_video = UpcomingVideo::take(10)->get();
-        $popular_video = Video::take(10)->orderBy('hits','DESC')->get();
+        $popular_video = Video::with(array('hitcounter'=>function($query){
+                                            $query->orderBy('raw_hits', 'DESC');
+                                        }))->take(10)->get();
+
         $random_video = Video::take(10)->inRandomOrder()->get();
         $recomended_video = Video::take(50)->inRandomOrder()->get();
         return view('front.homepage',compact('slider_top','latest_video','upcoming_video','popular_video','random_video','recomended_video'));
@@ -85,11 +89,14 @@ class FrontController extends Controller
      
 
     public function celebrity_detail($id,$slug){
-        return view('front.celebrity_detail');
+        $celebrity =  Celebrity::find($id);
+        $video_id =   json_decode($celebrity->video_id);
+        $most_view =  Video::whereIn('id', $video_id )->get();
+        return view('front.celebrity_detail',compact('celebrity','most_view'));
     }
 
     public function videos(){
-        $latest_video = Video::paginate(4);
+        $latest_video = Video::paginate(20);
         return view('front.videos',compact('latest_video'));
     }
 
@@ -110,10 +117,16 @@ class FrontController extends Controller
 
     public function blogdetail($id,$slug){
         $blog_detail = BlogPost::find($id);
-        return view('front.blogdetail',compact('blog_detail'));
+        $recent_blog = BlogPost::take(5)->orderBy('id','DESC')->get();
+        $category =  Category::get();
+        return view('front.blogdetail',compact('blog_detail','recent_blog','category'));
     }
 
 
+
+    public function watchList(){
+        
+    }
 
 
 }

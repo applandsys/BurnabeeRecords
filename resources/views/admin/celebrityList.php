@@ -35,9 +35,9 @@
                                         <td>{{$list->profile_photo}}</td>
                                         <td>
                                         <div class="flex align-items-center list-user-action">
-                                            <!-- <a class="iq-bg-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="#"><i class="lar la-eye"></i></a> -->
-                                            <!-- <a class="iq-bg-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="{{route('admin.pageEdit', $list->id)}}"><i class="ri-pencil-line"></i></a> -->
-                                            <!-- <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a> -->
+                                            <a class="iq-bg-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="{{route('home.celebrity_detail',['id' => $list->id, 'slug' => Illuminate\Support\Str::slug($list->celebrity_name)])}}" target="_blank"><i class="lar la-eye"></i></a> 
+                                            <a class="iq-bg-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="{{route('admin.pageEdit', $list->id)}}"><i class="ri-pencil-line"></i></a>
+                                            <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a> 
                                         </div>
                                         </td>
                                     </tr>

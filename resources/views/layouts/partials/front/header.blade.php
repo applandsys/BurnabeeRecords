@@ -1,3 +1,6 @@
+@php
+   $latest_video = App\Models\Video::take(3)->orderBy('id','DESC')->get();
+@endphp
 <header id="main-header">
          <div class="main-header">
             <div class="container-fluid">
@@ -50,36 +53,19 @@
                                        <div class="iq-sub-dropdown">
                                           <div class="iq-card shadow-none m-0">
                                              <div class="iq-card-body">
-                                                <a href="#" class="iq-sub-card">
-                                                   <div class="media align-items-center">
-                                                      <img src="{{ asset('assets/front_template/images/notify/thumb-1.jpg')}}" class="img-fluid mr-3" loading="lazy"
-                                                         alt="streamit" />
-                                                      <div class="media-body">
-                                                         <h6 class="mb-0 ">Boop Bitty</h6>
-                                                         <small class="font-size-12"> just now</small>
+                                             @foreach($latest_video as $latest)
+                                                   <a href="#" class="iq-sub-card">
+                                                      <div class="media align-items-center">
+                                                         <img src="{{ asset('uploads/video/thumbnail')}}/{{$latest->thubmnail_image}}" class="img-fluid mr-3" style="width: 60px;" loading="lazy"
+                                                            alt="streamit" />
+                                                         <div class="media-body">
+                                                            <h6 class="mb-0 ">{{Illuminate\Support\Str::limit($latest->title,20,'...')}}</h6>
+                                                            <small class="font-size-12"> {{$latest->created_at->diffForHumans()}}</small>
+                                                         </div>
                                                       </div>
-                                                   </div>
-                                                </a>
-                                                <a href="#" class="iq-sub-card">
-                                                   <div class="media align-items-center">
-                                                      <img src="{{ asset('assets/front_template/images/notify/thumb-2.jpg')}}" class="img-fluid mr-3" loading="lazy"
-                                                         alt="streamit" />
-                                                      <div class="media-body">
-                                                         <h6 class="mb-0 ">The Last Breath</h6>
-                                                         <small class="font-size-12">15 minutes ago</small>
-                                                      </div>
-                                                   </div>
-                                                </a>
-                                                <a href="#" class="iq-sub-card">
-                                                   <div class="media align-items-center">
-                                                      <img src="{{ asset('assets/front_template/images/notify/thumb-3.jpg')}}" class="img-fluid mr-3" loading="lazy"
-                                                         alt="streamit" />
-                                                      <div class="media-body">
-                                                         <h6 class="mb-0 ">The Hero Camp</h6>
-                                                         <small class="font-size-12">1 hour ago</small>
-                                                      </div>
-                                                   </div>
-                                                </a>
+                                                   </a>
+                                                   @endforeach
+  
                                              </div>
                                           </div>
                                        </div>
@@ -102,7 +88,7 @@
                                                       </div>
                                                    </div>
                                                 </a>
-                                                <a href="setting.html" class="iq-sub-card setting-dropdown">
+                                                <!-- <a href="setting.html" class="iq-sub-card setting-dropdown">
                                                    <div class="media align-items-center">
                                                       <div class="right-icon">
                                                          <i class="ri-settings-4-line text-primary"></i>
@@ -121,7 +107,7 @@
                                                          <h6 class="mb-0 ">Pricing Plan</h6>
                                                       </div>
                                                    </div>
-                                                </a>
+                                                </a> -->
                                                 <a href="login.html" class="iq-sub-card setting-dropdown">
                                                    <div class="media align-items-center">
                                                       <div class="right-icon">
@@ -213,36 +199,19 @@
                                  <div class="iq-sub-dropdown">
                                     <div class="iq-card shadow-none m-0">
                                        <div class="iq-card-body">
+                                          @foreach($latest_video as $latest)
                                           <a href="#" class="iq-sub-card">
                                              <div class="media align-items-center">
-                                                <img src="{{ asset('assets/front_template/images/notify/thumb-1.jpg')}}" class="img-fluid mr-3" loading="lazy"
+                                                <img src="{{ asset('uploads/video/thumbnail')}}/{{$latest->thubmnail_image}}" class="img-fluid mr-3" style="width: 60px;" loading="lazy"
                                                    alt="streamit" />
                                                 <div class="media-body">
-                                                   <h6 class="mb-0 ">Boot Bitty</h6>
-                                                   <small class="font-size-12"> just now</small>
+                                                   <h6 class="mb-0 ">{{Illuminate\Support\Str::limit($latest->title,20,'...')}}</h6>
+                                                   <small class="font-size-12"> {{$latest->created_at->diffForHumans()}}</small>
                                                 </div>
                                              </div>
                                           </a>
-                                          <a href="#" class="iq-sub-card">
-                                             <div class="media align-items-center">
-                                                <img src="{{ asset('assets/front_template/images/notify/thumb-2.jpg')}}" class="img-fluid mr-3" loading="lazy"
-                                                   alt="streamit" />
-                                                <div class="media-body">
-                                                   <h6 class="mb-0 ">The Last Breath</h6>
-                                                   <small class="font-size-12">15 minutes ago</small>
-                                                </div>
-                                             </div>
-                                          </a>
-                                          <a href="#" class="iq-sub-card">
-                                             <div class="media align-items-center">
-                                                <img src="{{ asset('assets/front_template/images/notify/thumb-3.jpg')}}" class="img-fluid mr-3" loading="lazy"
-                                                   alt="streamit" />
-                                                <div class="media-body">
-                                                   <h6 class="mb-0 ">The Hero Camp</h6>
-                                                   <small class="font-size-12">1 hour ago</small>
-                                                </div>
-                                             </div>
-                                          </a>
+                                          @endforeach
+
                                        </div>
                                     </div>
                                  </div>
@@ -266,7 +235,7 @@
                                                 </div>
                                              </div>
                                           </a>
-                                          <a href="setting.html" class="iq-sub-card setting-dropdown">
+                                          <!-- <a href="#" class="iq-sub-card setting-dropdown">
                                              <div class="media align-items-center">
                                                 <div class="right-icon">
                                                    <i class="ri-settings-4-line text-primary"></i>
@@ -276,7 +245,7 @@
                                                 </div>
                                              </div>
                                           </a>
-                                          <a href="pricing-plan-1.html" class="iq-sub-card setting-dropdown">
+                                          <a href="#" class="iq-sub-card setting-dropdown">
                                              <div class="media align-items-center">
                                                 <div class="right-icon">
                                                    <i class="ri-settings-4-line text-primary"></i>
@@ -285,7 +254,7 @@
                                                    <h6 class="my-0 ">Pricing Plan</h6>
                                                 </div>
                                              </div>
-                                          </a>
+                                          </a> -->
                                           <a href="{{route('logout')}}" class="iq-sub-card setting-dropdown" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                              <div class="media align-items-center">
                                                 <div class="right-icon">

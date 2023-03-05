@@ -61,7 +61,7 @@
                                         
                                     <div class="row">
                                         <div class="col-sm-12 form-group">
-                                            <select class="form-control js-example-basic-multiple" name="video_id[]" multiple="multiple" style="color: #000">
+                                            <select class="form-control js-example-basic-multiple" name="video_id[]" multiple="multiple" style="color: #000" required>
                                                 @foreach($movie_list as $list)
                                                     <option value="{{$list->id}}">{{$list->title}}</option>
                                                 @endforeach

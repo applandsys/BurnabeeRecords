@@ -19,4 +19,38 @@
       <link rel="stylesheet" href="{{ asset('assets/front_template/css/swiper.css') }}">
 
       <link href="{{ asset('assets/front_template/css/video-js.css') }}" rel="stylesheet" />
+
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+      <meta property="og:title" content="Burnabee Recaords" />
+      <meta property="og:description" content="Burnabee Media Music Video and Unlimited Drama." />
+      <meta property="og:image" content="https://burnabeerecords.com/assets/front_template/images/logo.png" />
+
+      <style>
+
+                  .page-item.active .page-link {
+                  z-index: 3;
+                  color: #000;
+                  background-color: #ccc;
+                  border-color: #fff;
+                  }
+            .page-link {
+                  position: relative;
+                  display: block;
+                  padding: 0.5rem 0.75rem;
+                  margin-left: -1px;
+                  line-height: 1.25;
+                  color: #000;
+                  background-color: #ccc;
+                  border: 1px
+                  px
+                  solid #dee2e6;
+            }
+
+            .content_center{
+                  display: flex;
+                   justify-content: center;
+            }
+         
+      </style>
    </head>

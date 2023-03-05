@@ -34,9 +34,9 @@
                                    
                                         <td>
                                         <div class="flex align-items-center list-user-action">
-                                            <!-- <a class="iq-bg-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="#"><i class="lar la-eye"></i></a> -->
+                                            <a class="iq-bg-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="{{route('admin.sliderAdd')}}"><i class="las la-plus-circle"></i></a> 
                                             <a class="iq-bg-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="{{route('admin.sliderEdit', $list->id)}}"><i class="ri-pencil-line"></i></a>
-                                            <!-- <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a> -->
+                                            <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="{{route('admin.sliderDelete', $list->id)}}"><i class="ri-delete-bin-line"></i></a>
                                         </div>
                                         </td>
                                     </tr>

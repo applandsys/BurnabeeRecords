@@ -15,6 +15,7 @@ use App\Models\RateReview;
 use App\Models\Celebrity;
 use App\Models\Setting;
 use App\Models\BlogPost;
+use App\Models\HitCounter;
 use Auth;
 
 
@@ -51,11 +52,7 @@ class AdminController extends Controller
                 'category_id',
                 'description',
                 'release_year',
-                'quality',
-                'youtube_iframe_link',
                 'language',
-                'duration',
-                'tags',
             ];
 
           //  dd(  $input_array);
@@ -65,6 +62,7 @@ class AdminController extends Controller
             }
 
             $create_data = $request->only($input_array);
+            $create_data['youtube_iframe_link'] =  $all_tag ;
 
             $image = $request->file('thubmnail_image');
 
@@ -78,6 +76,7 @@ class AdminController extends Controller
             })->save($thumbnail);
 
             $create_data['thubmnail_image'] = $img;
+           
 
             $create_video = Video::create($create_data);
 
@@ -103,6 +102,16 @@ class AdminController extends Controller
                 );
 
 
+                HitCounter::create(
+                    [
+                        'post_id'=>$video_id,
+                        'ip_address'=>'1.1.1.1',
+                        'post_type'=>'video',
+                        'unique_hits'=>1,
+                        'raw_hits'=>1
+                    ]);
+
+
             return redirect()->route('admin.addMovie')->with('success', 'Movie Created Successfully.');
 
         }else{
@@ -116,22 +125,102 @@ class AdminController extends Controller
      }
 
      
-    public function movieEdit($id) {
+    public function movieEdit(Request $request, $id) {
         $video = Video::find($id);
-        return view('admin.movieEdit',compact('video'));
+
+        $method = $request->method();
+        $input = $request->input();
+
+     //   dd(  $input);
+
+        if ($request->isMethod('post')) {
+            
+            $all_tag =  $input['youtube_iframe_link']; 
+
+            preg_match_all('/(src)=("[^"]*")/i',$all_tag, $src);
+
+            if(!empty($src[2])){
+                $all_tag = $src[2][0];
+            }
+
+            $input_array = [
+                'title',
+                'video_type',
+                'content_type',
+                'category_id',
+                'description',
+                'release_year',
+                'language',
+            ];
+
+            
+            if( $input['video_type']==2 ){
+                //  array_push('singer','lyrics','tune','music_composition');
+            }
+  
+              $create_data = $request->only($input_array);
+              $create_data['youtube_iframe_link'] =  $all_tag ;
+
+              if($request->hasFile('thubmnail_image')){
+                    $image = $request->file('thubmnail_image');
+    
+                    $img = $image->getClientOriginalName().'_'.time().'.'.$image->getClientOriginalExtension();
+                    $location = public_path('uploads/video/original_thumbnail/' .$img);
+                    $thumbnail = public_path('uploads/video/thumbnail/' .$img); // Resized
+                    $imgFile = Image::make($image)->save($location);
+        
+                    $imgFile->resize(350, 197, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($thumbnail);
+        
+                    $create_data['thubmnail_image'] = $img;
+               
+              }
+  
+              
+              $create_video = Video::where('id',$id)->update($create_data);
+        
+               VideoDetail::where('video_id',$id)->update(
+                              [
+                              'video_id'=> $id,
+                              'release_year'=> (isset($input['release_year']))?$input['release_year']:null,
+                              'quality'=> $input['quality'],
+                              'language'=> isset($input['language'])?$input['language']:'English',
+                              'duration'=> $input['duration'],
+                              'singer'=> $input['singer'],
+                              'lyrics'=> $input['lyrics'],
+                              'tune'=> $input['tune'],
+                              'music_composition'=> $input['music_composition'],
+                              'direction'=> $input['direction'],
+                              'cast'=> (isset($input['cast']))?$input['cast']:null,
+                              'label'=> (isset($input['label']))?$input['label']:null,
+                              'recorded_at'=> (isset($input['recorded_at']))?$input['recorded_at']:null,
+                              'tags'=> $input['tags']
+                              ]
+                  );
+  
+  
+              return redirect()->route('admin.movieList')->with('success', 'Movie Updated Successfully.');
+  
+
+
+        }else{
+            return view('admin.movieEdit',compact('video'));
+        }     
+
+        
+    }
+
+
+    public function deleteVideo($id){
+        $Video = Video::find($id);
+        $Video->delete(); // Easy right?
+        $VideoDetail = VideoDetail::where('video_id',$id);
+        $VideoDetail->delete();
+        return redirect()->route('admin.movieList')->with('success', 'Deleted  Successfully.');
     }
 
     
-
-    public function movieUpdate(Request $request,$id) {
-        $video = Video::find($id);
-        $video->page_title = $request->page_title;
-        $video->page_slug =  $request->page_slug;
-        $video->content = $request->content;
-        $video->save();
-        return redirect()->route('admin.movieList')->with('success','Movie Updated');
-     }
-
      public function pageList() {
         $page_list = Pages::paginate(20);
         return view('admin.pageList',compact('page_list'));
@@ -185,15 +274,37 @@ class AdminController extends Controller
 
       
 
-     public function categoryEdit($id) {
-        $category =  Category::paginate(20);
-        return view('admin.categoryEdit',compact('slider','category'));
+     public function categoryEdit(Request $request,$id) {
+        $method = $request->method();
+        $input = $request->input();
+        $category =  Category::find($id);
+
+        if ($request->isMethod('post')) {
+            $category->category_name =   $input['category_name'];
+            $category->parent_id =   $input['parent_id'];
+            $category->save();
+            return redirect()->route('admin.categoryList')->with('success', 'Category Updated Successfully.');
+        }else{
+            $category_list = Category::get();
+            return view('admin.categoryEdit',compact('category','category_list'));
+        }    
+
+      
+ 
      }
 
 
      public function sliderList() {
-        $slider_list = Slider::paginate(20);
+        $slider_list = Slider::get();
         return view('admin.sliderList',compact('slider_list'));
+     }
+
+     public function sliderAdd(Request $request){
+
+     }
+
+     public function sliderDelete(){
+        
      }
 
      

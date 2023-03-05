@@ -6,8 +6,9 @@
             <div class="col-sm-12">
                 <div class="iq-card">
                     <div class="iq-card-header d-flex justify-content-between">
-                    <div class="iq-header-title">
-                        <h4 class="card-title">Page List</h4>
+                    <div class="" style="display:flex; justify-content: space-between; width: 100%">
+                        <div><h4 class="card-title">Page List</h4></div>
+                        <div> <a href="" class="btn btn-primary"> <i class="las la-plus-circle"></i> Add Page</a> </div>
                     </div>
                     </div>
                     <div class="iq-card-body">

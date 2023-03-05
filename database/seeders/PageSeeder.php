@@ -23,14 +23,20 @@ class PageSeeder extends Seeder
                     ],    
                     [
                         'page_title'=>'Privacy policy',
-                        'page_slug'=>'privacy-policy',
+                        'page_slug'=>'privacy',
                         'content'=>'Privacy content will go here'
+                    ],  
+                    [
+                        'page_title'=>'Terms',
+                        'page_slug'=>'terms',
+                        'content'=>'Terms page'
                     ],    
                     [
                         'page_title'=>'Frequently ask Question',
                         'page_slug'=>'faq',
                         'content'=>'Freequently Asking  content will go here'
-                    ],    
+                    ],
+                        
                 ]);
     }
 }
