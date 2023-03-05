@@ -78,7 +78,9 @@ Route::group(['prefix' => 'admin','middleware' => 'auth','namespace'=>'Admin'], 
 
     Route::match(['get','post'],'/Settings', [AdminController::class, 'Settings'])->name('admin.Settings');
 
-
+    Route::get('/contact_message_new', [AdminController::class, 'ContactMessageNew'])->name('admin.ContactMessageNew');
+    Route::get('/ContactMessageOld', [AdminController::class, 'ContactMessageOld'])->name('admin.ContactMessageOld');
+    Route::get('/make_message_reply', [AdminController::class, 'admin.makeMessageReply'])->name('admin.admin.makeMessageReply');
     
     
 });

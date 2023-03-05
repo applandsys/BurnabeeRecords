@@ -142,14 +142,14 @@ Road no 8, house no 66, niketon, Dhaka, Bangladesh</p>
                            <div class="col-md-6">
                               <div class="cfield">
                                  <span class="wpcf7-form-control-wrap your-name">
-                                 <input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your Name">
+                                 <input type="text" name="your_name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your Name">
                                  </span>
                               </div>
                            </div>
                            <div class="col-md-6">
                               <div class="cfield">
                                  <span class="wpcf7-form-control-wrap your-subject">
-                                 <input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Last Name">
+                                 <input type="text" name="your_subject" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Last Name">
                                  </span>
                               </div>
                            </div>
@@ -163,14 +163,14 @@ Road no 8, house no 66, niketon, Dhaka, Bangladesh</p>
                            <div class="col-md-6">
                               <div class="cfield">
                                  <span class="wpcf7-form-control-wrap your-email">
-                                 <input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Your Email">
+                                 <input type="email" name="your_email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Your Email">
                                  </span>
                               </div>
                            </div>
                            <div class="col-md-12">
                               <div class="cfield">
                                  <span class="wpcf7-form-control-wrap your-message">
-                                 <textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your Message"></textarea>
+                                 <textarea name="your_message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your Message"></textarea>
                                  </span>
                               </div>
                            </div>

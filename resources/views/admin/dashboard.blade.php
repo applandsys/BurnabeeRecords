@@ -12,7 +12,7 @@
                          <div class="d-flex align-items-center justify-content-between">
                             <div class="iq-cart-text text-capitalize">
                                <p class="mb-0">
-                                  view
+                                 Today View
                                </p>
                             </div>
                             <div class="icon iq-icon-box-top rounded-circle bg-primary">
@@ -32,7 +32,7 @@
                          <div class="d-flex align-items-center justify-content-between">
                             <div class="iq-cart-text text-capitalize">
                                <p class="mb-0 font-size-14">
-                                  Rated This App
+                                  Month View
                                </p>
                             </div>
                             <div class="icon iq-icon-box-top rounded-circle bg-warning">
@@ -52,7 +52,7 @@
                          <div class="d-flex align-items-center justify-content-between">
                             <div class="iq-cart-text text-capitalize">
                                <p class="mb-0 font-size-14">
-                                  Downloaded
+                                 Total View
                                </p>
                             </div>
                             <div class="icon iq-icon-box-top rounded-circle bg-info">
@@ -72,7 +72,7 @@
                          <div class="d-flex align-items-center justify-content-between">
                             <div class="iq-cart-text text-uppercase">
                                <p class="mb-0 font-size-14">
-                                  Visitors
+                                 Total Visitors
                                </p>
                             </div>
                             <div class="icon iq-icon-box-top rounded-circle bg-success">
@@ -90,7 +90,7 @@
              <div class="iq-card">
                 <div class="iq-card-header d-flex justify-content-between align-items-center">
                    <div class="iq-header-title">
-                      <h4 class="card-title">Top Rated Item </h4>
+                      <h4 class="card-title">Top View Video </h4>
                    </div>
                    <div id="top-rated-item-slick-arrow" class="slick-aerrow-block  iq-rtl-direction"></div>
                 </div>
@@ -218,7 +218,7 @@
              <div class="iq-card iq-card iq-card-block iq-card-stretch iq-card-height">
                 <div class="iq-card-header">
                    <div class="iq-header-title">
-                      <h4 class="card-title text-center">User's Of Product</h4>
+                      <h4 class="card-title text-center">Visitor's Of Stats</h4>
                    </div>
                 </div>
                 <div class="iq-card-body pb-0">
@@ -232,7 +232,7 @@
                                   <div class="iq-user-box bg-primary"></div>
                                   <div class="media-body text-white">
                                      <p class="mb-0 font-size-14 line-height">New <br>
-                                        Customer
+                                        Visitor
                                      </p>
                                   </div>
                                </div>
@@ -246,7 +246,7 @@
                                   <div class="iq-user-box bg-warning"></div>
                                   <div class="media-body text-white">
                                      <p class="mb-0 font-size-14 line-height">Exsisting <br>
-                                        Subscriber's
+                                        Users's
                                      </p>
                                   </div>
                                </div>
@@ -274,7 +274,7 @@
                                   <div class="iq-user-box bg-danger"></div>
                                   <div class="media-body text-white">
                                      <p class="mb-0 font-size-14 line-height">Extented <br>
-                                        Subscriber's
+                                        Visitors's
                                      </p>
                                   </div>
                                </div>

@@ -16,6 +16,7 @@ use App\Models\Celebrity;
 use App\Models\Setting;
 use App\Models\BlogPost;
 use App\Models\HitCounter;
+use App\Models\ContactMessage;
 use Auth;
 
 
@@ -451,6 +452,19 @@ class AdminController extends Controller
             $category = Category::get();
             return view('admin.addBlog',compact('category'));
         }
+    }
+
+
+    public function ContactMessageNew(){
+        $contact_message = ContactMessage::where('status','new')->get();
+        return view('admin.contact_message_new',compact('contact_message'));  
+    }
+
+    
+
+    public function ContactMessageOld(){
+        $contact_message = ContactMessage::where('status','replied')->get();
+        return view('admin.contact_message_new',compact('contact_message'));  
     }
 
 

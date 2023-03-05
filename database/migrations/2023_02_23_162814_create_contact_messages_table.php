@@ -20,6 +20,7 @@ class CreateContactMessagesTable extends Migration
             $table->string('phone');
             $table->string('your_email');
             $table->string('your_message');
+            $table->enum('status',['new','replied'])->default('new');
             $table->timestamps();
         });
     }
