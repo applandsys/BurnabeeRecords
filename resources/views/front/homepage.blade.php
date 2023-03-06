@@ -41,14 +41,14 @@
                                        <span><i class="ri-share-fill"></i></span>
                                        <div class="share-box">
                                           <div class="d-flex align-items-center">
-                                             <a href="https://www.facebook.com/sharer?u=https://iqonic.design/wp-themes/streamit_wp/movie/shadow/"
+                                             <a href="https://www.facebook.com/sharer?u={{ url('/details') }}/{{$latest->id}}/{{urlencode(Illuminate\Support\Str::slug($latest->title))}}"
                                                 target="_blank" rel="noopener noreferrer" class="share-ico" tabindex="0"><i
                                                 class="ri-facebook-fill"></i></a>
-                                             <a href="https://twitter.com/intent/tweet?text=Currentlyreading"
+                                             <a href="https://twitter.com/intent/tweet?text={{ url('/details') }}/{{$latest->id}}/{{urlencode(Illuminate\Support\Str::slug($latest->title))}}"
                                                 target="_blank" rel="noopener noreferrer" class="share-ico" tabindex="0"><i
                                                 class="ri-twitter-fill"></i></a>
-                                             <a href="#"
-                                                data-link="https://iqonic.design/wp-themes/streamit_wp/movie/shadow/"
+                                             <a href="{{ url('/details') }}/{{$latest->id}}/{{urlencode(Illuminate\Support\Str::slug($latest->title))}}"
+                                                data-link="{{ url('/details') }}/{{$latest->id}}/{{urlencode(Illuminate\Support\Str::slug($latest->title))}}"
                                                 class="share-ico iq-copy-link" tabindex="0"><i
                                                 class="ri-links-fill"></i></a>
                                           </div>

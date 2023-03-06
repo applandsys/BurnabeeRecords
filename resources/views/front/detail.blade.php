@@ -67,9 +67,9 @@
                                           <span><i class="ri-share-fill"></i></span>
                                           <div class="share-box">
                                              <div class="d-flex align-items-center">
-                                                <a href="#" class="share-ico"><i class="ri-facebook-fill"></i></a>
-                                                <a href="#" class="share-ico"><i class="ri-twitter-fill"></i></a>
-                                                <a href="#" class="share-ico"><i class="ri-links-fill"></i></a>
+                                                <a href="https://www.facebook.com/sharer?u={{ url('/details') }}/{{$vid->id}}/{{urlencode(Illuminate\Support\Str::slug($vid->title))}}" class="share-ico"><i class="ri-facebook-fill"></i></a>
+                                                <a href="https://twitter.com/intent/tweet?text={{ url('/details') }}/{{$vid->id}}/{{urlencode(Illuminate\Support\Str::slug($vid->title))}}" class="share-ico"><i class="ri-twitter-fill"></i></a>
+                                                <a href="{{ url('/details') }}/{{$vid->id}}/{{urlencode(Illuminate\Support\Str::slug($vid->title))}}" class="share-ico"><i class="ri-links-fill"></i></a>
                                              </div>
                                           </div>
                                        </li>
@@ -81,7 +81,7 @@
                                        <li class="trending-list mr-3"><a class="title" href="#">{{$vid->videodatail->tags}}</a></li>
                                     </ul>
                               </div>
-                              {{-- <div class="trailor-video col-md-3 col-12 mt-lg-0 mt-4 mb-md-0 mb-1 text-lg-right">
+                              <!-- <div class="trailor-video col-md-3 col-12 mt-lg-0 mt-4 mb-md-0 mb-1 text-lg-right">
                                     <a href="https://www.youtube.com/watch?v=QCGq1epI9pQ"
                                        class="video-open playbtn block-images position-relative playbtn_thumbnail">
                                        <img width="1920" height="1080" src="images/genre/37.jpg"
@@ -92,7 +92,7 @@
                                           <span>Trailer Link</span>
                                        </span>
                                     </a>
-                              </div> --}}
+                              </div>  -->
                            </div>
                         </div>
                         <div class="streamit-content-details trending-info g-border">
@@ -104,15 +104,13 @@
                               <li class="nav-item">
                                     <a class="nav-link" data-toggle="pill" href="#reviw-1" role="tab" aria-selected="false">Rate &amp; Review</a>
                               </li>
-                              <li class="nav-item">
-                                    <a class="nav-link" data-toggle="pill" href="#sourse-1" role="tab" aria-selected="false">Sources</a>
-                              </li>
+                       
                            </ul>
                            <div class="tab-content">
                               <div id="dectripton-1" class="tab-pane fade active show"
                                     role="tabpanel">
                                     <div class="description-content">
-                                       <p>The most brutal emperor in the history of world.He was the founder of the most contiguous empire of the world i.e. the Mongol empire.He made an army by himself by uniting some nomadic tribes and trained them.</p>
+                                       <p>{{$vid->description}}</p>
                                     </div>
                               </div>
                               <div id="reviw-1" class="tab-pane fade" role="tabpanel">
@@ -126,7 +124,7 @@
                                           <div id="review_form">
                                                 <div id="respond" class="comment-respond">
                                                    <h3 id="reply-title" class="comment-reply-title mt-0">
-                                                      Be the first to review “Zombie-island 2”
+                                                      Be the first to review “{{$vid->title}}”
                                                    </h3>
                                                    <form  class="comment-form">
                                                       <p class="comment-notes">
@@ -173,45 +171,7 @@
                                        <div class="clear"></div>
                                     </div>
                               </div>
-                              <div id="sourse-1" class="tab-pane fade" role="tabpanel">
-                                    <div class="source-list-content">
-                                       <table class="movie-sources sources-table">
-                                          <thead class="trending-pills">
-                                                <tr>
-                                                   <th class="genres-table-heading">Links</th>
-                                                   <th class="genres-table-heading">Quality</th>
-                                                   <th class="genres-table-heading">Language</th>
-                                                   <th class="genres-table-heading">Player</th>
-                                                   <th class="genres-table-heading">Date Added</th>
-                                                </tr>
-                                          </thead>
-                                          <tbody class="trending-pills">
-                                                <tr>
-                                                   <td>
-                                                      <a href="movie-details.html" class="play-source movie-play-source btn-hover iq-button"><i class="ri-play-fill"></i>
-                                                            Play Now
-                                                      </a>
-                                                   </td>
-                                                   <td>1080p</td>
-                                                   <td>english</td>
-                                                   <td>MediaMonkey</td>
-                                                   <td>2021-12-04</td>
-                                                </tr>
-                                                <tr>
-                                                   <td>
-                                                      <a href="movie-details.html" class="play-source movie-play-source btn-hover iq-button"><i class="ri-play-fill"></i>
-                                                         Play Now
-                                                   </a>
-                                                   </td>
-                                                   <td>800p</td>
-                                                   <td>english</td>
-                                                   <td>MusicBee</td>
-                                                   <td>2021-12-02</td>
-                                                </tr>
-                                          </tbody>
-                                       </table>
-                                    </div>
-                              </div>
+                           
                            </div>
                         </div>
                   </div>

@@ -2,7 +2,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Streamit - Responsive Bootstrap 4 Admin Dashboard Template</title>
+    <title>Burnabee Records | @burnabeerecords</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/admin_template/images/favicon.ico')}}" />
     <!-- Bootstrap CSS -->
@@ -16,6 +16,7 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{ asset('assets/admin_template/css/responsive.css')}}">
 
+    <meta name="description" content=" Burnabee Records started in 2022. Promote good Bengali entertainment all over the world. Burnabee records has a keen interest in quality music and entertainment. So, we believe Burnabee means quality. You guys are always welcome on our official channel. We hope you'll find some good music as well as an entertainment source. Subscribe to our channel and stay with us.">
     <!-- Responsive CSS -->
     <script src="{{ asset('assets/admin_template/js/jquery.min.js')}}"></script>
     <script src="{{ asset('assets/admin_template/js/popper.min.js')}}"></script>

@@ -53,7 +53,7 @@
                   <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
                      <div class="widget text-left">
                         <div class="textwidget">
-                           <h6 class="footer-link-title">Streamit App</h6>
+                           <h6 class="footer-link-title">Burnabee Records</h6>
                            <div class="d-flex align-items-center">
                               <a class="app-image" href="#">
                               <img src="{{ asset('assets/front_template/images/footer/01.jpg')}}" loading="lazy" alt="play-store">
