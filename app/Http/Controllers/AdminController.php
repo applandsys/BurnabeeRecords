@@ -302,10 +302,27 @@ class AdminController extends Controller
 
      public function sliderAdd(Request $request){
 
+        if ($request->isMethod('post')) {
+
+            $input = $request->input();
+
+            Slider::create([
+                             'slider_postion'=>  $input['slider_postion'],
+                             'video_id'=>  $input['video_id'],
+                             'file_name'=>  '0',
+                            ]);
+
+            return redirect()->route('admin.sliderList')->with('success', 'Slider Added Successfully.');      
+
+        }else{
+            $video = Video::take(50)->orderBy('id','DESC')->get();
+            return view('admin.sliderAdd',compact('video')); 
+        }
      }
 
-     public function sliderDelete(){
-        
+     public function sliderDelete($id){
+        Slider::find($id)->delete();
+        return redirect()->route('admin.sliderList')->with('success', 'Slider Deleted Successfully.');    
      }
 
      

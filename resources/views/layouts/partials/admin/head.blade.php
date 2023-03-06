@@ -29,6 +29,10 @@
         .select2-search { background-color: #000; }.
         .select2-search input { background-color: #000; }
         .select2-results { background-color: #000; }
+
+        .top_button{
+            display:flex; justify-content: space-between; width: 100%
+        }
         </style>
 
     @stack('custom-scripts')

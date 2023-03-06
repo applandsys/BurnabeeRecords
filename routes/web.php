@@ -59,7 +59,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth','namespace'=>'Admin'], 
     Route::match(['get','post'],'/category-edit/{id}', [AdminController::class, 'categoryEdit'])->name('admin.categoryEdit');
 
     Route::get('/slider-list', [AdminController::class, 'sliderList'])->name('admin.sliderList');
-    Route::get('/slider-add', [AdminController::class, 'sliderAdd'])->name('admin.sliderAdd');
+    Route::match(['get','post'],'/slider-add', [AdminController::class, 'sliderAdd'])->name('admin.sliderAdd');
     Route::get('/slider-edit/{id}', [AdminController::class, 'sliderEdit'])->name('admin.sliderEdit');
     Route::get('/slider-delete/{id}', [AdminController::class, 'sliderDelete'])->name('admin.sliderDelete');
 

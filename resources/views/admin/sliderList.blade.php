@@ -6,8 +6,9 @@
             <div class="col-sm-12">
                 <div class="iq-card">
                     <div class="iq-card-header d-flex justify-content-between">
-                    <div class="iq-header-title">
-                        <h4 class="card-title">User List</h4>
+                    <div class="top_button">
+                        <div><h4 class="card-title">Slider List</h4></div>
+                        <div> <a href="{{ route('admin.sliderAdd') }}" class="btn btn-primary"> <i class="las la-plus-circle"></i> Add Slider</a> </div>
                     </div>
                     </div>
                     <div class="iq-card-body">
@@ -34,9 +35,8 @@
                                    
                                         <td>
                                         <div class="flex align-items-center list-user-action">
-                                            <a class="iq-bg-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="{{route('admin.sliderAdd')}}"><i class="las la-plus-circle"></i></a> 
-                                            <a class="iq-bg-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="{{route('admin.sliderEdit', $list->id)}}"><i class="ri-pencil-line"></i></a>
-                                            <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="{{route('admin.sliderDelete', $list->id)}}"><i class="ri-delete-bin-line"></i></a>
+                                            <!-- <a class="iq-bg-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="{{route('admin.sliderEdit', $list->id)}}"><i class="ri-pencil-line"></i></a> -->
+                                            <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="{{route('admin.sliderDelete', $list->id)}}"  onclick="return confirm('Are you sure you want to delete?');"><i class="ri-delete-bin-line"></i></a>
                                         </div>
                                         </td>
                                     </tr>
