@@ -36,7 +36,7 @@
                                           data-animation-in="fadeInLeft" data-delay-in="0.6"
                                           style="opacity: 1; animation-delay: 0.6s">{{$vid->title}}
                                           </h3>
-                                       {{-- <div class="slider-ratting d-flex align-items-center ml-md-3 ml-0">
+                                          <div class="slider-ratting d-flex align-items-center ml-md-3 ml-0">
                                           <ul
                                                 class="ratting-start p-0 m-0 list-inline text-primary d-flex align-items-center justify-content-left">
                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -45,8 +45,8 @@
                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-star-half" aria-hidden="true"></i></li>
                                           </ul>
-                                          <span class="text-white ml-2">3.5 (lmdb)</span>
-                                       </div> --}}
+                                          <span class="text-white ml-2">4.5</span>
+                                       </div> 
                                     </div>
                                     <ul class="p-0 mt-2 list-inline d-flex flex-wrap movie-content">
                                        <li class="trending-list"><a class="text-primary title" href="#">Music</a></li>
@@ -59,7 +59,7 @@
                                        </span>
                                        <span
                                           class="trending-year trending-year-list single-view-count font-Weight-500 genres-info"><i
-                                                class="fa fa-eye"></i>{{$vid->hitcounter[0]->raw_hits}} views</span>
+                                                class="fa fa-eye"></i> {{$vid->hitcounter->sum('raw_hits')}}  views</span>
                                     </div>
 
                                     <ul class="list-inline p-0 m-0 share-icons music-play-lists mb-1">

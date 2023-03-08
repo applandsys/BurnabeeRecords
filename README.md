@@ -19,7 +19,8 @@ composer require intervention/image
 
 FRONT:
 1. Home Page = OK
-2. Search page = OK (Thumbnail size problem ase)
+1.1 Video Detail page = 
+2. Search page = OK 
 3. Pages = Ok
 4. Watch List =  NOOO
 5. Footer = OK
