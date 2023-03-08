@@ -20,8 +20,8 @@
                             </div>
                          </div>
                          <div class="d-flex align-items-center justify-content-between mt-3">
-                            <h4 class=" mb-0">+24K</h4>
-                            <p class="mb-0 text-primary"><span><i class="fa fa-caret-down mr-2"></i></span>35%</p>
+                            <h4 class=" mb-0">{{$total_view}}</h4>
+                            <!-- <p class="mb-0 text-primary"><span><i class="fa fa-caret-down mr-2"></i></span>35%</p> -->
                          </div>
                       </div>
                    </div>
@@ -40,8 +40,8 @@
                             </div>
                          </div>
                          <div class="d-flex align-items-center justify-content-between mt-3">
-                            <h4 class=" mb-0">+55K</h4>
-                            <p class="mb-0 text-warning"><span><i class="fa fa-caret-up mr-2"></i></span>50%</p>
+                            <h4 class=" mb-0">{{$monthly_view}}</h4>
+                            <!-- <p class="mb-0 text-warning"><span><i class="fa fa-caret-up mr-2"></i></span>50%</p> -->
                          </div>
                       </div>
                    </div>
@@ -60,8 +60,8 @@
                             </div>
                          </div>
                          <div class="d-flex align-items-center justify-content-between mt-3">
-                            <h4 class=" mb-0">+1M</h4>
-                            <p class="mb-0 text-info"><span><i class="fa fa-caret-up mr-2"></i></span>80%</p>
+                            <h4 class=" mb-0">{{$today_view}}</h4>
+                            <!-- <p class="mb-0 text-info"><span><i class="fa fa-caret-up mr-2"></i></span>80%</p> -->
                          </div>
                       </div>
                    </div>
@@ -80,8 +80,8 @@
                             </div>
                          </div>
                          <div class="d-flex align-items-center justify-content-between mt-3">
-                            <h4 class=" mb-0">+2M</h4>
-                            <p class="mb-0 text-success"><span><i class="fa fa-caret-up mr-2"></i></span>80%</p>
+                            <h4 class=" mb-0">{{$total_visitors}}</h4>
+                            <!-- <p class="mb-0 text-success"><span><i class="fa fa-caret-up mr-2"></i></span>80%</p> -->
                          </div>
                       </div>
                    </div>
@@ -96,16 +96,17 @@
                 </div>
                 <div class="iq-card-body">
                    <ul class="list-unstyled row top-rated-item mb-0 iq-rtl-direction">
+                     @foreach($top_view_video as $topview)
                       <li class="col-sm-6 col-lg-4 col-xl-3 iq-rated-box">
                          <div class="iq-card mb-0">
                             <div class="iq-card-body p-0">
                                <div class="iq-thumb">
                                   <a href="javascript:void(0)">
-                                     <img src="../assets/images/dashboard/01.jpg" class="img-fluid w-100 img-border-radius" alt="">
+                                     <img src="{{ asset('uploads/video/thumbnail')}}/{{$topview->thubmnail_image}}" class="img-fluid w-100 img-border-radius" alt="">
                                   </a>
                                </div>
                                <div class="iq-feature-list">
-                                  <h6 class="font-weight-600 mb-0">The Last Breath</h6>
+                                  <h6 class="font-weight-600 mb-0">{{ $topview->title}}</h6>
                                   <p class="mb-0 mt-2">T.v show</p>
                                   <div class="d-flex align-items-center my-2 iq-ltr-direction">
                                      <p class="mb-0 mr-2"><i class="lar la-eye mr-1"></i> 134</p>
@@ -115,6 +116,7 @@
                             </div>
                          </div>
                       </li>
+                      @endforeach
                       <li class="col-sm-6 col-lg-4 col-xl-3 iq-rated-box">
                          <div class="iq-card mb-0">
                             <div class="iq-card-body p-0">

@@ -13,18 +13,24 @@ use  App\Models\BlogPost;
 use  App\Models\Celebrity;
 use  App\Models\Category;
 
+use App\MyInterface\StatsInterface;
+use App\MyInterface\VideoInterface;
+
 
 class FrontController extends Controller
 {
     //
+    private VideoInterface $videoRepository;
+
+    public function __construct(VideoInterface $videoRepository){
+        $this->videoRepository =  $videoRepository;
+    }
+
     public function index(){
         $slider_top = Slider::where('slider_postion','slider_top')->get();
         $latest_video = Video::take(10)->get();
         $upcoming_video = UpcomingVideo::take(10)->get();
-        $popular_video = Video::with(array('hitcounter'=>function($query){
-                                            $query->orderBy('raw_hits', 'DESC');
-                                        }))->take(10)->get();
-
+        $popular_video =  $this->videoRepository->topViewVideo();
         $random_video = Video::take(10)->inRandomOrder()->get();
         $recomended_video = Video::take(50)->inRandomOrder()->get();
         return view('front.homepage',compact('slider_top','latest_video','upcoming_video','popular_video','random_video','recomended_video'));

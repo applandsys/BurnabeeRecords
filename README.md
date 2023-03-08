@@ -19,7 +19,7 @@ composer require intervention/image
 
 FRONT:
 1. Home Page = OK
-1.1 Video Detail page = 
+1.1 Video Detail page = Ok 
 2. Search page = OK 
 3. Pages = Ok
 4. Watch List =  NOOO
@@ -48,3 +48,6 @@ ADMIN:
 11. Page Add = NO
 12. Page Delete = NO
 13. Setting = OK
+
+Extra:
+1. Hit counter video detail page okay

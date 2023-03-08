@@ -160,7 +160,7 @@
                                           <img src="{{ asset('uploads/video/thumbnail')}}/{{$pvideo->thubmnail_image}}" class="img-fluid" alt="" loading="lazy">
                                        </div>
                                        <div class="block-description">
-                                          <h6 class="iq-title"><a href="{{ url('/details') }}/{{$latest->id}}/{{urlencode(Illuminate\Support\Str::slug($latest->title))}}">Shadow Warrior</a></h6>
+                                          <h6 class="iq-title"><a href="{{ url('/details') }}/{{$latest->id}}/{{urlencode(Illuminate\Support\Str::slug($latest->title))}}">{{$pvideo->title}}</a></h6>
                                           <div class="movie-time d-flex align-items-center my-2">
                                              <span class="text-white">1hr : 50mins</span>
                                           </div>

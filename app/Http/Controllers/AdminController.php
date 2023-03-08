@@ -20,12 +20,29 @@ use App\Models\ContactMessage;
 use Auth;
 
 
+use App\MyInterface\StatsInterface;
+use App\MyInterface\VideoInterface;
+
+
 
 class AdminController extends Controller
 {
-    public function index(){
 
-        return view('admin.dashboard');
+    private StatsInterface $StatsRepository;
+    private VideoInterface $videoRepository;
+
+    public function __construct(StatsInterface $StatsRepository, VideoInterface $videoRepository){
+        $this->StatsRepository = $StatsRepository;
+        $this->videoRepository =  $videoRepository;
+    }
+
+    public function index(){
+        $total_view =   $this->StatsRepository->totalView();
+        $monthly_view   =   $this->StatsRepository->monthlyView();
+        $today_view   =   $this->StatsRepository->todayView();
+        $total_visitors   =   $this->StatsRepository->totalVisitors();
+        $top_view_video   =   $this->videoRepository->topViewVideo();;
+        return view('admin.dashboard',compact('total_view','monthly_view','today_view','total_visitors','top_view_video'));
     }
 
 
