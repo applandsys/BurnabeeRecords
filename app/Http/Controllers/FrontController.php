@@ -118,7 +118,9 @@ class FrontController extends Controller
 
     public function blog(){
         $blog_post = BlogPost::paginate(20);
-        return view('front.blog',compact('blog_post'));
+        $recent_post = BlogPost::take(5)->get();
+        $category =  Category::get();
+        return view('front.blog',compact('blog_post','recent_post','category'));
     }
 
     public function blogdetail($id,$slug){
