@@ -6,9 +6,9 @@
                <div class="container-fluid position-relative h-100">
                   <div class="slider-inner h-100">
                      <div class="row align-items-center  iq-ltr-direction h-100 ">
-                        <div class="col-lg-7 col-md-12">
+                        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                           <h1 class="slider-text big-title title text-uppercase"  data-iq-gsap="onStart" data-iq-position-x="-150" data-iq-position-y="0" data-iq-duration="1" data-iq-delay=".4">{{$top_slider->video->title}}</h1>
+                           <h1 class="slider-text big-title title text-uppercase"  data-iq-gsap="onStart" data-iq-position-x="-150" data-iq-position-y="0" data-iq-duration="1" data-iq-delay=".4"></h1>
                            <div class="d-flex flex-wrap align-items-center r-mb-23" data-iq-gsap="onStart" data-iq-position-x="-150" data-iq-position-y="0" data-iq-duration="1" data-iq-delay=".4">
                               {{-- <div class="slider-ratting d-flex align-items-center mr-4 mt-2 mt-md-3" >
                                  <ul
@@ -36,7 +36,7 @@
                                  <span class="ml-3">1hrs : 45mins</span>
                               </div> --}}
                               <p data-iq-gsap="onStart" data-iq-position-x="0" data-iq-position-y="150" data-iq-duration="1" data-iq-delay=".5">
-                              {{$top_slider->video->description}}
+                     
                               </p>
                            </div>
                            <div class="trending-list" data-wp_object-in="fadeInUp" data-delay-in="1.2">
