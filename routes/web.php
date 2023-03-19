@@ -76,7 +76,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth','namespace'=>'Admin'], 
 
     Route::match(['get','post'],'/add-blog', [AdminController::class, 'addBlog'])->name('admin.addBlog');
 
-    Route::match(['get','post'],'/Settings', [AdminController::class, 'Settings'])->name('admin.Settings');
+    Route::match(['get','post'],'/settings', [AdminController::class, 'Settings'])->name('admin.settings');
 
     Route::get('/contact_message_new', [AdminController::class, 'ContactMessageNew'])->name('admin.ContactMessageNew');
     Route::get('/ContactMessageOld', [AdminController::class, 'ContactMessageOld'])->name('admin.ContactMessageOld');

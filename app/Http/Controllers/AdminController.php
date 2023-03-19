@@ -433,10 +433,10 @@ class AdminController extends Controller
             $Setting->youtube = $request->youtube;
             $Setting->save();
 
-            return redirect()->route('admin.Settings')->with('success', 'Setting Updated Successfully.');
+            return redirect()->route('admin.settings')->with('success', 'Setting Updated Successfully.');
 
         }else{
-            return view('admin.Setting',compact('Setting'));
+            return view('admin.setting',compact('Setting'));
         }
     }
 
