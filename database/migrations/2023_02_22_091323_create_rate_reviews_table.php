@@ -18,8 +18,8 @@ class CreateRateReviewsTable extends Migration
             $table->bigInteger('post_id');
             $table->enum('post_type',['video','blog']);
             $table->bigInteger('user_id');
-            $table->smallInteger('rating');
-            $table->text('review_text');
+            $table->smallInteger('rating')->nullable();
+            $table->text('review_text')->nullable();
             $table->timestamps();
         });
     }

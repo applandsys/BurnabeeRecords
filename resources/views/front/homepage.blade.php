@@ -21,7 +21,7 @@
                         <li class="swiper-slide slide-item">
                            <div class="block-images position-relative ">
                               <div class="img-box">
-                                 <img src="{{ asset('uploads/video/thumbnail')}}/{{$latest->thubmnail_image}}" class="img-fluid" alt="" loading="lazy">
+                                 <img src="{{ asset('uploads/video/original_thumbnail')}}/{{$latest->thubmnail_image}}" class="img-fluid" alt="" loading="lazy">
                               </div>
                               <div class="block-description">
                                  <h6 class="iq-title"><a href="{{ url('/details') }}/{{$latest->id}}/{{urlencode(Illuminate\Support\Str::slug($latest->title))}}">{{Illuminate\Support\Str::limit($latest->title,30)}}</a></h6>
@@ -90,7 +90,7 @@
                         <li class="swiper-slide slide-item">
                            <div class="block-images position-relative ">
                               <div class="img-box">
-                                 <img src="{{ asset('uploads/upcoming/thumbnail')}}/{{$latest->thumbnail}}" class="img-fluid" alt="" loading="lazy">
+                                 <img src="{{ asset('uploads/upcoming/thumbnail')}}/{{$uvideo->thumbnail}}" class="img-fluid" alt="" loading="lazy">
                               </div>
                               <div class="block-description">
                                  <h6 class="iq-title"><a href="#">{{$uvideo->title}}</a></h6>
@@ -157,15 +157,15 @@
                                  <div class="swiper-slide swiper-bg">
                                     <div class="block-images position-relative ">
                                        <div class="img-box slider--image">
-                                          <img src="{{ asset('uploads/video/thumbnail')}}/{{$pvideo->thubmnail_image}}" class="img-fluid" alt="" loading="lazy">
+                                          <img src="{{ asset('uploads/video/original_thumbnail')}}/{{$pvideo->thubmnail_image}}" class="img-fluid" alt="" loading="lazy">
                                        </div>
                                        <div class="block-description">
-                                          <h6 class="iq-title"><a href="{{ url('/details') }}/{{$latest->id}}/{{urlencode(Illuminate\Support\Str::slug($latest->title))}}">{{$pvideo->title}}</a></h6>
+                                          <h6 class="iq-title"><a href="{{ url('/details') }}/{{$pvideo->id}}/{{urlencode(Illuminate\Support\Str::slug($pvideo->title))}}">{{$pvideo->title}}</a></h6>
                                           <div class="movie-time d-flex align-items-center my-2">
                                              <span class="text-white">1hr : 50mins</span>
                                           </div>
                                           <div class="hover-buttons">
-                                             <a href="{{ url('/details') }}/{{$latest->id}}/{{urlencode(Illuminate\Support\Str::slug($latest->title))}}" role="button" class="btn btn-hover"><i
+                                             <a href="{{ url('/details') }}/{{$pvideo->id}}/{{urlencode(Illuminate\Support\Str::slug($pvideo->title))}}" role="button" class="btn btn-hover"><i
                                                 class="fa fa-play mr-1" aria-hidden="true"></i>
                                              Play Now
                                              </a>
@@ -216,12 +216,12 @@
                                  <div class="slider--image block-images"><img src="{{ asset('uploads/video/original_thumbnail')}}/{{$pvideo->thubmnail_image}}" loading="lazy" alt="" /></div>
                                  <div class="description">
                                     <div class="block-description">
-                                       <h6 class="iq-title"><a href="{{ url('/details') }}/{{$latest->id}}/{{urlencode(Illuminate\Support\Str::slug($latest->title))}}">Shadow Warrior</a></h6>
+                                       <h6 class="iq-title"><a href="{{ url('/details') }}/{{$pvideo->id}}/{{urlencode(Illuminate\Support\Str::slug($pvideo->title))}}">Shadow Warrior</a></h6>
                                        <div class="movie-time d-flex align-items-center my-2">
                                           <span class="text-white">1hr : 50mins</span>
                                        </div>
                                        <div class="hover-buttons">
-                                          <a href="{{ url('/details') }}/{{$latest->id}}/{{urlencode(Illuminate\Support\Str::slug($latest->title))}}" role="button" class="btn btn-hover"><i
+                                          <a href="{{ url('/details') }}/{{$pvideo->id}}/{{urlencode(Illuminate\Support\Str::slug($pvideo->title))}}" role="button" class="btn btn-hover"><i
                                              class="fa fa-play mr-1" aria-hidden="true"></i>
                                           Play Now
                                           </a>
@@ -265,12 +265,12 @@
                                  <img src="{{ asset('uploads/video/thumbnail')}}/{{$rvideo->thubmnail_image}}" class="img-fluid" loading="lazy" alt="">
                               </div>
                               <div class="block-description">
-                                 <h6 class="iq-title"><a href="{{ url('/details') }}/{{$latest->id}}/{{urlencode(Illuminate\Support\Str::slug($latest->title))}}">X-Men</a></h6>
+                                 <h6 class="iq-title"><a href="{{ url('/details') }}/{{$rvideo->id}}/{{urlencode(Illuminate\Support\Str::slug($rvideo->title))}}">X-Men</a></h6>
                                  <div class="movie-time d-flex align-items-center my-2">
                                     <span class="text-white">1hr : 45mins</span>
                                  </div>
                                  <div class="hover-buttons">
-                                    <a href="{{ url('/details') }}/{{$latest->id}}/{{urlencode(Illuminate\Support\Str::slug($latest->title))}}" role="button" class="btn btn-hover">
+                                    <a href="{{ url('/details') }}/{{$rvideo->id}}/{{urlencode(Illuminate\Support\Str::slug($rvideo->title))}}" role="button" class="btn btn-hover">
                                     <i class="fa fa-play mr-1" aria-hidden="true"></i>
                                     Play Now
                                     </a>

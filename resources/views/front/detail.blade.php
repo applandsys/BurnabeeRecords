@@ -126,7 +126,9 @@
                                                    <h3 id="reply-title" class="comment-reply-title mt-0">
                                                       Be the first to review “{{$vid->title}}”
                                                    </h3>
-                                                   <form  class="comment-form">
+                                                   <form  class="comment-form" action="{{route('home.submitReview')}}" method="POST">
+                                                      @csrf
+                                                      <input type="hidden" name="rating" value="">
                                                       <p class="comment-notes">
                                                             <span id="email-notes">Your email address will not be published.</span>
                                                             <span class="required-field-message" aria-hidden="true">Required fields are marked

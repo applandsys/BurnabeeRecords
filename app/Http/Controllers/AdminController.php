@@ -89,6 +89,10 @@ class AdminController extends Controller
             $thumbnail = public_path('uploads/video/thumbnail/' .$img); // Resized
             $imgFile = Image::make($image)->save($location);
 
+            $imgFile->resize(1920, 1080, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($location);
+
             $imgFile->resize(350, 197, function ($constraint) {
                 $constraint->aspectRatio();
             })->save($thumbnail);
@@ -185,7 +189,12 @@ class AdminController extends Controller
                     $img = $image->getClientOriginalName().'_'.time().'.'.$image->getClientOriginalExtension();
                     $location = public_path('uploads/video/original_thumbnail/' .$img);
                     $thumbnail = public_path('uploads/video/thumbnail/' .$img); // Resized
+                    $hd_size = public_path('uploads/video/hd/' .$img); // Resized
                     $imgFile = Image::make($image)->save($location);
+
+                    $imgFile->resize(1920, 1080, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($location);
         
                     $imgFile->resize(350, 197, function ($constraint) {
                         $constraint->aspectRatio();

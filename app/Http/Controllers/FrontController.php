@@ -137,4 +137,13 @@ class FrontController extends Controller
     }
 
 
+    public function submitReview(Request $request){
+        $method = $request->method();
+        $input = $request->input();
+        if ($request->isMethod('post')) {
+            dd( $input);
+        }
+    }
+
+
 }

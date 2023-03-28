@@ -34,6 +34,7 @@ Route::namespace('Front')->group(function(){
     Route::get('/search-video',[FrontController::class,'searchVideo'])->name('home.searchVideo');
     Route::get('/blog',[FrontController::class,'blog'])->name('home.blog');
     Route::get('/blogdetail/{id}/{slug}',[FrontController::class,'blogdetail'])->name('home.blogdetail');
+    Route::post('/submitReview',[FrontController::class,'submitReview'])->name('home.submitReview');
    
 });
 
